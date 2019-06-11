@@ -1,0 +1,35 @@
+
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.15
+    working_directory: ~/cuadro
+    environment:
+      - TEST_RESULTS: /tmp/test-results/jest
+    steps:
+      - checkout
+      - run: mkdir -p $TEST_RESULTS
+      - restore_cache:
+          key: deps-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: install-dependencies
+          command: |
+            if [ ! -d ~/cuadro/node_modules ]; then
+              yarn
+            fi
+      - save_cache:
+          key: deps-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: test
+          command: |
+            CI=true yarn test --coverage --reporters=jest-junit
+            mv junit.xml $TEST_RESULTS/results.xml
+      - store_artifacts:
+          path: /tmp/test-results
+      - store_test_results:
+          path: /tmp/test-results/jest
