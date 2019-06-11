@@ -1,4 +1,4 @@
-export const standard: { [key: string]: string } = {
+export const theme: { [key: string]: string } = {
   WHITE: '#FFF',
   BLACK: '#000',
   DARK: '#303030',
