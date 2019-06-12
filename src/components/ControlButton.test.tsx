@@ -10,9 +10,7 @@ describe('<ControlButton />', () => {
     const actionSpy = jest.fn();
     const component = mount(<ControlButton action={actionSpy} >My Control Button</ControlButton>);
     component.simulate('click');
-    expect(component).toHaveStyleRule('font-weight', 'bold');
-    expect(component).toHaveProp('disabled', false);
-    expect(component.text()).toBe('My Control Button');
+    expect(component).toMatchSnapshot();
     expect(actionSpy).toHaveBeenCalled();
   });
 

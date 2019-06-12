@@ -5,3 +5,7 @@ export {
 export {
   default as Controls,
 } from './Controls';
+export {
+  default as PuzzleBoard,
+  SwipeDirection,
+} from './PuzzleBoard';

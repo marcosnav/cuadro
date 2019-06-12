@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ControlButton /> renders properly 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.64em;
+  font-weight: bold;
+  height: 42px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  opacity: 1;
+  padding: 0;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c1 {
+  height: 26px;
+  width: auto;
+}
+
+<ControlButton
+  action={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  disabled={false}
+>
+  <styled.button
+    disabled={false}
+    onClick={[Function]}
+  >
+    <StyledComponent
+      disabled={false}
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": false,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  align-items: center;
+  background: ",
+              [Function],
+              ";
+  border: none;
+  color: ",
+              [Function],
+              ";
+  display: flex;
+  flex-direction: column;
+  font-size: 0.64em;
+  font-weight: bold;
+  height 42px;
+  justify-content: space-between;
+  opacity: ",
+              [Function],
+              ";
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+",
+            ],
+          },
+          "displayName": "styled.button",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "button",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+      onClick={[Function]}
+    >
+      <button
+        className="c0"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <styled.img
+          src=""
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bwzfXH",
+                  "isStatic": true,
+                  "lastClassName": "c1",
+                  "rules": Array [
+                    "
+  height: 26px;
+  width: auto;
+",
+                  ],
+                },
+                "displayName": "styled.img",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "img",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            src=""
+          >
+            <img
+              className="c1"
+              src=""
+            />
+          </StyledComponent>
+        </styled.img>
+        My Control Button
+      </button>
+    </StyledComponent>
+  </styled.button>
+</ControlButton>
+`;

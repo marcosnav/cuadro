@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logo/> renders properly 1`] = `
+.c0 {
+  -webkit-animation: none;
+  animation: none;
+  height: 20px;
+  position: relative;
+  width: 20px;
+}
+
+.c2 {
+  -webkit-animation: none;
+  animation: none;
+  left: 0;
+  height: 16px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 20px;
+}
+
+.c1 {
+  -webkit-animation: none;
+  animation: none;
+  left: 0;
+  height: 16px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 20px;
+  -webkit-animation: none;
+  animation: none;
+}
+
+<Logo
+  status="DEFAULT"
+>
+  <styled.div
+    animate={false}
+  >
+    <StyledComponent
+      animate={false}
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": false,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  animation: ",
+              [Function],
+              "
+  height: 20px;
+  position: relative;
+  width: 20px;
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="c0"
+      >
+        <Styled(styled.div)
+          animate={false}
+        >
+          <StyledComponent
+            animate={false}
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htpNat",
+                  "isStatic": false,
+                  "lastClassName": "c1",
+                  "rules": Array [
+                    "
+  animation: ",
+                    [Function],
+                    "
+  left: 0;
+  height: 16px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 20px;
+",
+                    "
+  animation: ",
+                    [Function],
+                    "
+",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-bwzfXH",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-htpNat",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="c1"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 20 16"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 0H0L10 16L20 0H10V2H16.5L10 12L3.5 2H10z"
+                  fill="#009CE5"
+                />
+              </svg>
+            </div>
+          </StyledComponent>
+        </Styled(styled.div)>
+        <styled.div
+          animate={false}
+        >
+          <StyledComponent
+            animate={false}
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bwzfXH",
+                  "isStatic": false,
+                  "lastClassName": "c2",
+                  "rules": Array [
+                    "
+  animation: ",
+                    [Function],
+                    "
+  left: 0;
+  height: 16px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 20px;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="c2"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 20 16"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 16H0L10 0L20 16H10V14H16.5L10 4L3.5 14H10z"
+                  fill="#009CE5"
+                />
+              </svg>
+            </div>
+          </StyledComponent>
+        </styled.div>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Logo>
+`;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { Controls, Logo } from './components';
+import { Controls, Logo, PuzzleBoard } from './components';
 import { theme } from './constants';
 
 const gradient = (props: { [key: string]: any }) => (
@@ -20,12 +20,25 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
+const swiped = (d: string) => console.log(d);
+const puzzleStateMock = [
+  [0, 1, 2, 3],
+  [4, 5, 6, 7],
+  [8, 9, 10, 11],
+  [12, 13, 14, 15],
+];
+
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
         <Logo />
         <Controls />
+        <PuzzleBoard
+          image={'https://cdn.newsapi.com.au/image/v1/5fe400894288b7956ab8d7bf9daa9881?width=650'}
+          puzzleState={puzzleStateMock}
+          onSwipe={swiped}
+        />
       </Wrapper>
     </ThemeProvider>
   );

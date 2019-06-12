@@ -13,11 +13,7 @@ describe('<Controls/>', () => {
 
   test('renders properly', () => {
     const component = mount(<Controls />);
-    const controls = component.find('ControlButton');
-    expect(component).toHaveStyleRule('background', theme.WHITE);
-    expect(component).toHaveStyleRule('width', '300px');
-    expect(component).toHaveProp('newOnly', false);
-    expect(controls.getElements().length).toBe(3);
+    expect(component).toMatchSnapshot();
   });
 
   describe('with prop: new-only', () => {
