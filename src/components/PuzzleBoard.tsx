@@ -41,7 +41,7 @@ export enum SwipeDirection {
 
 interface IProps {
   image: string;
-  puzzleState: number[][];
+  puzzleState: number[];
   onSwipe: (direction: SwipeDirection) => void;
 }
 
@@ -99,12 +99,7 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
   }, [endX, endY]);
 
   const boardPieces = () => {
-    return [
-      ...puzzleState[0],
-      ...puzzleState[1],
-      ...puzzleState[2],
-      ...puzzleState[3],
-    ].map((pos: number, index) => {
+    return puzzleState.map((pos: number, index) => {
       if (!index) {
         return null;
       }
