@@ -48,20 +48,20 @@ const secondaryControls = (onRestart: () => void, onSeeOriginal: () => void) => 
  * Controls Component
  * @param props { newOnly: boolean }
  */
-const Controls: FC<IProps> = (props) => {
+const Controls: FC<IProps> = ({ newOnly }) => {
   const onNewGame = () => '';
   const onRestart = () => '';
   const onSeeOriginal = () => '';
 
   return (
-    <ControlsWrapper newOnly={props.newOnly}>
+    <ControlsWrapper newOnly={newOnly}>
       <ControlButton
         action={onNewGame}
         type={ControlType.NEW_GAME}
       >
         New Game
       </ControlButton>
-      {!props.newOnly ? secondaryControls(onRestart, onSeeOriginal) : null}
+      {!newOnly ? secondaryControls(onRestart, onSeeOriginal) : null}
     </ControlsWrapper>
   );
 };

@@ -53,8 +53,7 @@ const swipeThreshold = 50;
  * {onSwipe} Function Handler that recieves SwipeDirection as parameter
  * @param props {puzzleState: number[][], onSwipe: Function}
  */
-const PuzzleBoard: FC<IProps> = (props) => {
-  const { image, puzzleState, onSwipe } = props;
+const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
   const [endX, setEndX] = useState(0);

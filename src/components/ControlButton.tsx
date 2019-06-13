@@ -45,8 +45,7 @@ interface IProps {
  * ControlButton Component
  * @param props { type: ControlType, disabled: boolean }
  */
-const ControlButton: FC<IProps> = (props) => {
-  const { action, type, disabled } = props;
+const ControlButton: FC<IProps> = ({ action, type, disabled, children }) => {
   let icon: string = '';
 
   switch (type) {
@@ -70,7 +69,7 @@ const ControlButton: FC<IProps> = (props) => {
   return (
     <ButtonWrapper onClick={evalAction} disabled={disabled}>
       <ButtonIcon src={icon} />
-      {props.children}
+      {children}
     </ButtonWrapper>
   );
 };

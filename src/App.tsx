@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { Controls, Logo, PuzzleBoard } from './components';
+import {
+  Controls,
+  Credits,
+  Logo,
+  PrettyLink,
+  PuzzleBoard,
+  ShareCenter,
+} from './components';
 import { theme } from './constants';
 
 const gradient = (props: { [key: string]: any }) => (
@@ -28,7 +35,7 @@ const puzzleStateMock = [
   [12, 13, 14, 15],
 ];
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
@@ -39,6 +46,17 @@ const App: React.FC = () => {
           puzzleState={puzzleStateMock}
           onSwipe={swiped}
         />
+        <ShareCenter />
+        <Credits>
+          {'Made with </> by '}
+          <PrettyLink href='https://github.com/marcosnav/cuadro'>
+            marcosnav.
+          </PrettyLink>
+          {' See project in '}
+          <PrettyLink href='https://github.com/marcosnav/cuadro'>
+            GitHub.
+          </PrettyLink>
+        </Credits>
       </Wrapper>
     </ThemeProvider>
   );

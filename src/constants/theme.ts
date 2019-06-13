@@ -10,5 +10,6 @@ export const theme: { [key: string]: string } = {
   GD_PURPLE: '#7D05AA',
   RED: '#FF2121',
   SOFT_GRAY: '#C8D2DD',
+  TEXT: '#FFF',
   WHITE: '#FFF',
 };
