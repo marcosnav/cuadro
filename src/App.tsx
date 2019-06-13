@@ -10,6 +10,10 @@ import {
 } from './components';
 import { theme } from './constants';
 
+import { PuzzleStore } from './store';
+
+import { KeyControls } from './services/keycontrols';
+
 const gradient = (props: { [key: string]: any }) => (
   `linear-gradient(180deg, ${props.theme.GD_PURPLE} 0%, ${props.theme.GD_BLUE} 100%);`
 );
@@ -28,12 +32,15 @@ const Wrapper = styled.div`
 `;
 
 const swiped = (d: string) => console.log(d);
-const puzzleStateMock = [
-  [0, 1, 2, 3],
-  [4, 5, 6, 7],
-  [8, 9, 10, 11],
-  [12, 13, 14, 15],
-];
+const puzzle = new PuzzleStore();
+puzzle.mix();
+
+const keycontrols = new KeyControls({
+  enter: () => null,
+  move: puzzle.move,
+});
+
+keycontrols.register();
 
 const App: FC = () => {
   return (
@@ -43,7 +50,7 @@ const App: FC = () => {
         <Controls />
         <PuzzleBoard
           image={'https://cdn.newsapi.com.au/image/v1/5fe400894288b7956ab8d7bf9daa9881?width=650'}
-          puzzleState={puzzleStateMock}
+          puzzleState={puzzle.puzzle}
           onSwipe={swiped}
         />
         <ShareCenter />

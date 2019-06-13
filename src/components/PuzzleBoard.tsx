@@ -1,5 +1,6 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { SwipeDirection } from './../constants';
 import PuzzlePiece from './PuzzlePiece';
 
 const Board = styled.div`
@@ -29,16 +30,6 @@ const Holder = styled.div`
 
 Holder.displayName = 'Holder';
 
-/**
- * SwipeDirection, one of UP, RIGHT, LEFT, DOWN
- */
-export enum SwipeDirection {
-  UP = 'UP',
-  RIGHT = 'RIGHT',
-  DOWN = 'DOWN',
-  LEFT = 'LEFT',
-}
-
 interface IProps {
   image: string;
   puzzleState: number[];
@@ -59,12 +50,12 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
   const [endX, setEndX] = useState(0);
   const [endY, setEndY] = useState(0);
 
-  const handleSwipe = () => {
+  const handleSwipe = useCallback(() => {
     const xDistance = endX - startX;
     const yDistance = endY - startY;
     const absX = Math.abs(xDistance);
     const absY = Math.abs(yDistance);
-    const { UP, DOWN, LEFT, RIGHT} = SwipeDirection;
+    const { UP, DOWN, LEFT, RIGHT } = SwipeDirection;
     let direction: SwipeDirection|null = null;
 
     if (absX < swipeThreshold && absY < swipeThreshold) {
@@ -80,15 +71,15 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
     if (direction) {
       onSwipe(direction);
     }
-  };
+  }, [endX, endY, onSwipe]);
 
-  const startListener = (ev: React.TouchEvent) => {
+  const startSwipe = (ev: React.TouchEvent) => {
     ev.stopPropagation();
     setStartX(ev.touches[0].screenX);
     setStartY(ev.touches[0].screenY);
   };
 
-  const endListener = (ev: React.TouchEvent) => {
+  const endSwipe = (ev: React.TouchEvent) => {
     ev.stopPropagation();
     setEndX(ev.changedTouches[0].screenX);
     setEndY(ev.changedTouches[0].screenY);
@@ -96,7 +87,7 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
 
   useEffect(() => {
     handleSwipe();
-  }, [endX, endY]);
+  }, [handleSwipe]);
 
   const boardPieces = () => {
     return puzzleState.map((pos: number, index) => {
@@ -108,7 +99,7 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
   };
 
   return (
-    <Board onTouchStart={startListener} onTouchEnd={endListener}>
+    <Board onTouchStart={startSwipe} onTouchEnd={endSwipe}>
       <Holder>
         {boardPieces()}
       </Holder>

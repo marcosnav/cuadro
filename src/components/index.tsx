@@ -10,7 +10,6 @@ export {
 } from './PrettyLink';
 export {
   default as PuzzleBoard,
-  SwipeDirection,
 } from './PuzzleBoard';
 export {
   default as ShareCenter,

@@ -2,7 +2,8 @@ import { mount } from 'enzyme';
 import 'jest-enzyme';
 import 'jest-styled-components';
 import React from 'react';
-import PuzzleBoard, { SwipeDirection } from './PuzzleBoard';
+import { SwipeDirection } from './../constants';
+import PuzzleBoard from './PuzzleBoard';
 
 const puzzleStateMock = [1, 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
