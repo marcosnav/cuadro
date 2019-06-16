@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ControlIcon/> renders properly 1`] = `
+.c0 {
+  height: 26px;
+  width: auto;
+}
+
+<ButtonIcon>
+  <img
+    className="c0"
+  />
+</ButtonIcon>
+`;

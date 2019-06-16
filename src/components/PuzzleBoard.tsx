@@ -1,34 +1,7 @@
 import React, { FC, useCallback, useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { SwipeDirection } from './../constants';
 import PuzzlePiece from './PuzzlePiece';
-
-const Board = styled.div`
-  background: ${(props) => props.theme.WHITE};
-  background-position: center center;
-  background-size: cover cover;
-  border-radius: 3px;
-  box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  height: 300px;
-  margin-top: 16px;
-  padding: 16px;
-  position: relative;
-  width: 300px;
-`;
-
-Board.displayName = 'Board';
-
-const Holder = styled.div`
-  background: ${(props) => props.theme.SOFT_GRAY};
-  box-shadow: inset 0 1px 4px 2px rgba(0, 0, 0, 0.1);
-  height: 268px;
-  width: 268px;
-`;
-
-Holder.displayName = 'Holder';
+import * as S from './styled';
 
 interface IProps {
   image: string;
@@ -99,11 +72,11 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
   };
 
   return (
-    <Board onTouchStart={startSwipe} onTouchEnd={endSwipe}>
-      <Holder>
+    <S.Board onTouchStart={startSwipe} onTouchEnd={endSwipe}>
+      <S.PuzzleHolder>
         {boardPieces()}
-      </Holder>
-    </Board>
+      </S.PuzzleHolder>
+    </S.Board>
   );
 };
 

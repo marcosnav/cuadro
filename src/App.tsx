@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import {
   Controls,
   Credits,
@@ -8,50 +8,30 @@ import {
   PuzzleBoard,
   ShareCenter,
 } from './components';
-import { theme } from './constants';
+import { AppWrapper } from './components/styled';
+import {
+  Status,
+  SwipeDirection,
+  theme,
+} from './constants';
 
-import { PuzzleStore } from './store';
+interface IAppSetup {
+  image: string;
+  puzzle: number[];
+  onMove: (d: SwipeDirection) => void;
+  status: Status;
+}
 
-import { KeyControls } from './services/keycontrols';
-
-const gradient = (props: { [key: string]: any }) => (
-  `linear-gradient(180deg, ${props.theme.GD_PURPLE} 0%, ${props.theme.GD_BLUE} 100%);`
-);
-
-const Wrapper = styled.div`
-  align-items: center;
-  background: ${(props) => props.theme.PURPLE};
-  background: ${ (props) => gradient(props) }
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  padding: 26px;
-  position: fixed;
-  width: 100%;
-`;
-
-const swiped = (d: string) => console.log(d);
-const puzzle = new PuzzleStore();
-puzzle.mix();
-
-const keycontrols = new KeyControls({
-  enter: () => null,
-  move: puzzle.move,
-});
-
-keycontrols.register();
-
-const App: FC = () => {
+const App: FC<IAppSetup> = ({ image, puzzle, onMove}) => {
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper>
+      <AppWrapper>
         <Logo />
         <Controls />
         <PuzzleBoard
-          image={'https://cdn.newsapi.com.au/image/v1/5fe400894288b7956ab8d7bf9daa9881?width=650'}
-          puzzleState={puzzle.puzzle}
-          onSwipe={swiped}
+          image={image}
+          puzzleState={puzzle}
+          onSwipe={onMove}
         />
         <ShareCenter />
         <Credits>
@@ -64,7 +44,7 @@ const App: FC = () => {
             GitHub.
           </PrettyLink>
         </Credits>
-      </Wrapper>
+      </AppWrapper>
     </ThemeProvider>
   );
 };

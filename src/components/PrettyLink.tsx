@@ -1,16 +1,5 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
-
-const Link = styled.a`
-  color: ${(props) => props.theme.TEXT};
-  font-weight: bold;
-  text-decoration: underline;
-  transition: opacity 0.3s ease;
-
-  &:hover {
-    opacity: 0.4;
-  }
-`;
+import * as S from './styled';
 
 interface IProps {
   href?: string;
@@ -26,9 +15,9 @@ const PrettyLink: FC<IProps> = ({ href, onClick, children }) => {
   };
 
   return (
-    <Link href={href} target='_blank' onClick={action}>
+    <S.Link href={href} target='_blank' onClick={action}>
       {children}
-    </Link>
+    </S.Link>
   );
 };
 

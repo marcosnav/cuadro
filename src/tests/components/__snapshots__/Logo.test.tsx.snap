@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logo/> renders properly 1`] = `
+<LogoAnimator
+  animate={false}
+>
+  <TriangleAnimator
+    animate={false}
+  >
+    <svg
+      height="16"
+      viewBox="0 0 20 16"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 0H0L10 16L20 0H10V2H16.5L10 12L3.5 2H10z"
+        fill="#009CE5"
+      />
+    </svg>
+  </TriangleAnimator>
+  <TriangleAnimator
+    animate={false}
+    reversed={true}
+  >
+    <svg
+      height="16"
+      viewBox="0 0 20 16"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 16H0L10 0L20 16H10V14H16.5L10 4L3.5 14H10z"
+        fill="#009CE5"
+      />
+    </svg>
+  </TriangleAnimator>
+</LogoAnimator>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PuzzlePiece/> renders properly 1`] = `
+<Piece
+  left={201}
+  top={0}
+>
+  <PieceImage
+    image=""
+    left={-67}
+    top={-0}
+  />
+</Piece>
+`;

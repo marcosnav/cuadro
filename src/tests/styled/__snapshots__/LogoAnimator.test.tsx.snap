@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LogoAnimator /> animate: true 1`] = `
+.c0 {
+  -webkit-animation: lcQkPt 2s ease infinite;
+  animation: lcQkPt 2s ease infinite;
+  height: 20px;
+  position: relative;
+  width: 20px;
+}
+
+<LogoAnimator
+  animate={true}
+>
+  <div
+    className="c0"
+  />
+</LogoAnimator>
+`;
+
+exports[`<LogoAnimator /> renders properly 1`] = `
+.c0 {
+  -webkit-animation: none;
+  animation: none;
+  height: 20px;
+  position: relative;
+  width: 20px;
+}
+
+<LogoAnimator>
+  <div
+    className="c0"
+  />
+</LogoAnimator>
+`;
