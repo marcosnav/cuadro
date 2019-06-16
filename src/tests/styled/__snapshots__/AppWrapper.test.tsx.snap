@@ -18,6 +18,8 @@ exports[`<AppWrapper/> renders properly 1`] = `
   height: 100vh;
   padding: 26px;
   position: fixed;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
   width: 100%;
 }
 

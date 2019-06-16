@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-const Control = styled.button`
+interface IProps {
+  disabled?: boolean;
+}
+
+const Control = styled.button<IProps>`
   align-items: center;
   background: ${(props) => props.theme.WHITE};
   border: none;

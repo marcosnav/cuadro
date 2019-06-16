@@ -22,10 +22,10 @@ const getGradient = (props: StyledProps<IProps>) => {
   return `linear-gradient(180deg, ${startG} 0%, ${endG} 100%)`;
 };
 
-const AppWrapper = styled.div`
+const AppWrapper = styled.div<IProps>`
   align-items: center;
-  background: ${(props: StyledProps<IProps>) => props.theme.PURPLE};
-  background: ${ (props: StyledProps<IProps>) => getGradient(props) };
+  background: ${(props) => props.theme.PURPLE};
+  background: ${ (props) => getGradient(props) };
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

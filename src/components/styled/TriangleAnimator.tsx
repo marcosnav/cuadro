@@ -28,8 +28,8 @@ const wrapAnimation = (props: StyledProps<IProps>) => {
   return props.animate ? css`${animation} 2s ease infinite forwards;` : 'none;';
 };
 
-const TriangleAnimator = styled.div`
-  animation: ${(props: StyledProps<IProps>) => wrapAnimation(props)}
+const TriangleAnimator = styled.div<IProps>`
+  animation: ${(props) => wrapAnimation(props)}
   left: 0;
   height: 16px;
   margin: auto;

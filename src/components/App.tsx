@@ -1,18 +1,16 @@
 import React, { FC } from 'react';
 import { ThemeProvider } from 'styled-components';
 import {
-  Controls,
-  Logo,
-  PrettyLink,
-  PuzzleBoard,
-  ShareCenter,
-} from './components';
-import * as S from './components/styled';
-import {
   Status,
   SwipeDirection,
   theme,
-} from './constants';
+} from './../constants';
+import Logo from './Logo';
+import PrettyLink from './PrettyLink';
+import PuzzleBoard from './PuzzleBoard';
+import PuzzleControls from './PuzzleControls';
+import ShareCenter from './ShareCenter';
+import * as S from './styled';
 
 interface IAppSetup {
   image: string;
@@ -26,7 +24,7 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove, status }) => {
     <ThemeProvider theme={theme}>
       <S.AppWrapper status={status} >
         <Logo />
-        <Controls />
+        <PuzzleControls />
         <PuzzleBoard
           image={image}
           puzzleState={puzzle}

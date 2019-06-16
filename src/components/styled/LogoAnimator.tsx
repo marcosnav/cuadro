@@ -17,8 +17,8 @@ const wrapAnimation = (props: StyledProps<IProps>) => (
   props.animate ? css`${rotate} 2s ease infinite;` : 'none;'
 );
 
-const LogoAnimator = styled.div`
-  animation: ${(props: StyledProps<IProps>) => wrapAnimation(props)}
+const LogoAnimator = styled.div<IProps>`
+  animation: ${(props) => wrapAnimation(props)}
   height: 20px;
   position: relative;
   width: 20px;
