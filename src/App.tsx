@@ -2,13 +2,12 @@ import React, { FC } from 'react';
 import { ThemeProvider } from 'styled-components';
 import {
   Controls,
-  Credits,
   Logo,
   PrettyLink,
   PuzzleBoard,
   ShareCenter,
 } from './components';
-import { AppWrapper } from './components/styled';
+import * as S from './components/styled';
 import {
   Status,
   SwipeDirection,
@@ -22,10 +21,10 @@ interface IAppSetup {
   status: Status;
 }
 
-const App: FC<IAppSetup> = ({ image, puzzle, onMove}) => {
+const App: FC<IAppSetup> = ({ image, puzzle, onMove, status }) => {
   return (
     <ThemeProvider theme={theme}>
-      <AppWrapper>
+      <S.AppWrapper status={status} >
         <Logo />
         <Controls />
         <PuzzleBoard
@@ -34,7 +33,7 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove}) => {
           onSwipe={onMove}
         />
         <ShareCenter />
-        <Credits>
+        <S.Credits>
           {'Made with </> by '}
           <PrettyLink href='https://github.com/marcosnav/cuadro'>
             marcosnav.
@@ -43,8 +42,8 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove}) => {
           <PrettyLink href='https://github.com/marcosnav/cuadro'>
             GitHub.
           </PrettyLink>
-        </Credits>
-      </AppWrapper>
+        </S.Credits>
+      </S.AppWrapper>
     </ThemeProvider>
   );
 };

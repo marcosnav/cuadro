@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AppWrapper/> reders properly 1`] = `
+exports[`<AppWrapper/> renders properly 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: linear-gradient(180deg,undefined 0%,undefined 100%);
+  background: linear-gradient(180deg,#7D05AA 0%,#238BFF 100%);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
