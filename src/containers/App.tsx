@@ -23,7 +23,7 @@ const AppContainer: FC = () => (
     onNewGame={puzzleStore.mix}
     onRestart={puzzleStore.reload}
     onSeeOriginal={puzzleStore.mix}
-    status={Status.PLAYING_GAME}
+    status={Status.LOADING_IMAGE}
   />
 );
 

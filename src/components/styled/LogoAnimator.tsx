@@ -20,7 +20,9 @@ const wrapAnimation = (props: StyledProps<IProps>) => (
 const LogoAnimator = styled.div<IProps>`
   animation: ${(props) => wrapAnimation(props)}
   height: 20px;
+  margin-top: ${(props) => props.animate ? 'calc(50vh - 98px)' : '0'};
   position: relative;
+  transition: margin-top 0.6s ease;
   width: 20px;
 `;
 

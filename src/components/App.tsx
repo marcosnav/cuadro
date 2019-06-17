@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import {
   Status,
@@ -23,21 +23,44 @@ interface IAppSetup {
 }
 
 const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSeeOriginal, status }) => {
+  const [ isLoading, setLoading ] = useState(true);
+
+  const puzzleComponents = () => {
+    return (
+      [(
+      <PuzzleControls
+        key='puzzlecontrols'
+        onNewGame={onNewGame}
+        onRestart={onRestart}
+        onSeeOriginal={onSeeOriginal}
+      />
+      ), (
+      <PuzzleBoard
+        key='puzzleboard'
+        image={image}
+        puzzleState={puzzle}
+        onSwipe={onMove}
+      />
+      ), (
+        <ShareCenter
+          key='sharecenter'
+        />
+      ),
+    ]);
+  };
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 4000);
+
   return (
     <ThemeProvider theme={theme}>
-      <S.AppWrapper status={status} >
-        <Logo status={status} />
-        <PuzzleControls
-          onNewGame={onNewGame}
-          onRestart={onRestart}
-          onSeeOriginal={onSeeOriginal}
-        />
-        <PuzzleBoard
-          image={image}
-          puzzleState={puzzle}
-          onSwipe={onMove}
-        />
-        <ShareCenter />
+      <S.AppWrapper status={isLoading ? Status.LOADING_IMAGE : Status.PLAYING_GAME} >
+        <S.MainTitle show={isLoading} >
+          Cuadro
+        </S.MainTitle>
+        <Logo status={isLoading ? Status.LOADING_IMAGE : Status.PLAYING_GAME} />
+        {!isLoading ? puzzleComponents() : null}
         <S.Credits>
           {'Made with </> by '}
           <PrettyLink href='https://github.com/marcosnav/cuadro'>

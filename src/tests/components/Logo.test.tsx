@@ -15,6 +15,7 @@ describe('<Logo/>', () => {
       const pathFills = component.find('path');
       expect(pathFills.getElements()[0].props.fill).toBe(theme.RED);
       expect(pathFills.getElements()[1].props.fill).toBe(theme.RED);
+      expect(component).toMatchSnapshot();
     });
   });
 });

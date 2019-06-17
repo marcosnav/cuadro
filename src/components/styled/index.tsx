@@ -5,6 +5,7 @@ export { default as Control } from './Control';
 export { default as ControlIcon } from './ControlIcon';
 export { default as Controls } from './Controls';
 export { default as Link } from './Link';
+export { default as MainTitle } from './MainTitle';
 export { default as CapsTitle } from './CapsTitle';
 export { default as Section } from './Section';
 export { default as ShareSection } from './ShareSection';

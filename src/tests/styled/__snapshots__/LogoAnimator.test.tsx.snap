@@ -5,7 +5,10 @@ exports[`<LogoAnimator /> animate: true 1`] = `
   -webkit-animation: lcQkPt 2s ease infinite;
   animation: lcQkPt 2s ease infinite;
   height: 20px;
+  margin-top: calc(50vh - 98px);
   position: relative;
+  -webkit-transition: margin-top 0.6s ease;
+  transition: margin-top 0.6s ease;
   width: 20px;
 }
 
@@ -23,7 +26,10 @@ exports[`<LogoAnimator /> renders properly 1`] = `
   -webkit-animation: none;
   animation: none;
   height: 20px;
+  margin-top: 0;
   position: relative;
+  -webkit-transition: margin-top 0.6s ease;
+  transition: margin-top 0.6s ease;
   width: 20px;
 }
 

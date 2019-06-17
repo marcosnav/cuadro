@@ -1,4 +1,4 @@
-import { action, intercept, observable, toJS } from 'mobx';
+import { action, observable, toJS } from 'mobx';
 import { SwipeDirection } from './../constants';
 
 /**

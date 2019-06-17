@@ -6,20 +6,20 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
   onTouchStart={[Function]}
 >
   <div
-    className="sc-iwsKbI epIAEG"
+    className="sc-gZMcBi hhgAoh"
     onTouchEnd={[Function]}
     onTouchStart={[Function]}
   >
     <PuzzleHolder>
       <div
-        className="sc-gZMcBi gDgmOB"
+        className="sc-gqjmRU csWcEm"
       >
         <Piece
           left={0}
           top={0}
         >
           <div
-            className="sc-gqjmRU jHsaGe"
+            className="sc-VigVT kwJVfx"
           >
             <PieceImage
               image=""
@@ -27,7 +27,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-0}
             >
               <div
-                className="sc-VigVT fIqCJj"
+                className="sc-jTzLTM bhLxvv"
               />
             </PieceImage>
           </div>
@@ -37,7 +37,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={0}
         >
           <div
-            className="sc-gqjmRU guMLcV"
+            className="sc-VigVT iTrJmf"
           >
             <PieceImage
               image=""
@@ -45,7 +45,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-0}
             >
               <div
-                className="sc-VigVT eFTdJG"
+                className="sc-jTzLTM clxXLe"
               />
             </PieceImage>
           </div>
@@ -55,7 +55,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={0}
         >
           <div
-            className="sc-gqjmRU dukDdZ"
+            className="sc-VigVT fgdROd"
           >
             <PieceImage
               image=""
@@ -63,7 +63,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-0}
             >
               <div
-                className="sc-VigVT fFWRCF"
+                className="sc-jTzLTM fCDvZO"
               />
             </PieceImage>
           </div>
@@ -73,7 +73,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={67}
         >
           <div
-            className="sc-gqjmRU dzpEya"
+            className="sc-VigVT POTZp"
           >
             <PieceImage
               image=""
@@ -81,7 +81,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-67}
             >
               <div
-                className="sc-VigVT jljySD"
+                className="sc-jTzLTM inmklt"
               />
             </PieceImage>
           </div>
@@ -91,7 +91,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={67}
         >
           <div
-            className="sc-gqjmRU kbLygx"
+            className="sc-VigVT bYIDyA"
           >
             <PieceImage
               image=""
@@ -99,7 +99,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-67}
             >
               <div
-                className="sc-VigVT ctaygX"
+                className="sc-jTzLTM exPoMU"
               />
             </PieceImage>
           </div>
@@ -109,7 +109,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={67}
         >
           <div
-            className="sc-gqjmRU bfgdvl"
+            className="sc-VigVT clFHax"
           >
             <PieceImage
               image=""
@@ -117,7 +117,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-67}
             >
               <div
-                className="sc-VigVT fgDWPo"
+                className="sc-jTzLTM kjDmon"
               />
             </PieceImage>
           </div>
@@ -127,7 +127,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={67}
         >
           <div
-            className="sc-gqjmRU hXXxcB"
+            className="sc-VigVT dnYCTc"
           >
             <PieceImage
               image=""
@@ -135,7 +135,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-67}
             >
               <div
-                className="sc-VigVT zikom"
+                className="sc-jTzLTM fKElNT"
               />
             </PieceImage>
           </div>
@@ -145,7 +145,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={134}
         >
           <div
-            className="sc-gqjmRU hHDSto"
+            className="sc-VigVT goOfJv"
           >
             <PieceImage
               image=""
@@ -153,7 +153,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-134}
             >
               <div
-                className="sc-VigVT htULSm"
+                className="sc-jTzLTM mXIhU"
               />
             </PieceImage>
           </div>
@@ -163,7 +163,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={134}
         >
           <div
-            className="sc-gqjmRU bzclvp"
+            className="sc-VigVT ifAhlG"
           >
             <PieceImage
               image=""
@@ -171,7 +171,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-134}
             >
               <div
-                className="sc-VigVT hvJYcH"
+                className="sc-jTzLTM bdiXiD"
               />
             </PieceImage>
           </div>
@@ -181,7 +181,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={134}
         >
           <div
-            className="sc-gqjmRU fVeBUQ"
+            className="sc-VigVT hdZHuS"
           >
             <PieceImage
               image=""
@@ -189,7 +189,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-134}
             >
               <div
-                className="sc-VigVT lmZoYJ"
+                className="sc-jTzLTM hrHaQk"
               />
             </PieceImage>
           </div>
@@ -199,7 +199,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={134}
         >
           <div
-            className="sc-gqjmRU dKmhpK"
+            className="sc-VigVT gxrtSc"
           >
             <PieceImage
               image=""
@@ -207,7 +207,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-134}
             >
               <div
-                className="sc-VigVT kWGaLb"
+                className="sc-jTzLTM kLGBqZ"
               />
             </PieceImage>
           </div>
@@ -217,7 +217,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={201}
         >
           <div
-            className="sc-gqjmRU jcWuJk"
+            className="sc-VigVT dHEDnc"
           >
             <PieceImage
               image=""
@@ -225,7 +225,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-201}
             >
               <div
-                className="sc-VigVT EPtpx"
+                className="sc-jTzLTM ALPsd"
               />
             </PieceImage>
           </div>
@@ -235,7 +235,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={201}
         >
           <div
-            className="sc-gqjmRU bduzEv"
+            className="sc-VigVT eYJEPc"
           >
             <PieceImage
               image=""
@@ -243,7 +243,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-201}
             >
               <div
-                className="sc-VigVT kYveBR"
+                className="sc-jTzLTM fgEAjl"
               />
             </PieceImage>
           </div>
@@ -253,7 +253,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={201}
         >
           <div
-            className="sc-gqjmRU jKBdKP"
+            className="sc-VigVT hwKgqy"
           >
             <PieceImage
               image=""
@@ -261,7 +261,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-201}
             >
               <div
-                className="sc-VigVT ixgRcQ"
+                className="sc-jTzLTM dRcYNJ"
               />
             </PieceImage>
           </div>
@@ -271,7 +271,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
           top={201}
         >
           <div
-            className="sc-gqjmRU hYfMog"
+            className="sc-VigVT kRsllw"
           >
             <PieceImage
               image=""
@@ -279,7 +279,7 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
               top={-201}
             >
               <div
-                className="sc-VigVT ktZbvi"
+                className="sc-jTzLTM bVTPSL"
               />
             </PieceImage>
           </div>
