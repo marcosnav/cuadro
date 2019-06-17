@@ -10,6 +10,7 @@ import PrettyLink from './PrettyLink';
 import PuzzleBoard from './PuzzleBoard';
 import PuzzleControls from './PuzzleControls';
 import ShareCenter from './ShareCenter';
+import StackRevealer from './StackRevealer';
 import * as S from './styled';
 
 interface IAppSetup {
@@ -27,26 +28,28 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSee
 
   const puzzleComponents = () => {
     return (
-      [(
-      <PuzzleControls
-        key='puzzlecontrols'
-        onNewGame={onNewGame}
-        onRestart={onRestart}
-        onSeeOriginal={onSeeOriginal}
-      />
-      ), (
-      <PuzzleBoard
-        key='puzzleboard'
-        image={image}
-        puzzleState={puzzle}
-        onSwipe={onMove}
-      />
-      ), (
-        <ShareCenter
-          key='sharecenter'
+      [
+        (
+        <PuzzleControls
+          key='puzzlecontrols'
+          onNewGame={onNewGame}
+          onRestart={onRestart}
+          onSeeOriginal={onSeeOriginal}
         />
-      ),
-    ]);
+        ), (
+        <PuzzleBoard
+          key='puzzleboard'
+          image={image}
+          puzzleState={puzzle}
+          onSwipe={onMove}
+        />
+        ), (
+          <ShareCenter
+            key='sharecenter'
+          />
+        ),
+      ]
+    );
   };
 
   setTimeout(() => {
@@ -56,11 +59,15 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSee
   return (
     <ThemeProvider theme={theme}>
       <S.AppWrapper status={isLoading ? Status.LOADING_IMAGE : Status.PLAYING_GAME} >
-        <S.MainTitle show={isLoading} >
-          Cuadro
-        </S.MainTitle>
+        <S.Revealer height={52} show={isLoading} direction={'DOWN'}>
+          <S.MainTitle>
+            Cuadro
+          </S.MainTitle>
+        </S.Revealer>
         <Logo status={isLoading ? Status.LOADING_IMAGE : Status.PLAYING_GAME} />
-        {!isLoading ? puzzleComponents() : null}
+        <StackRevealer show={!isLoading}>
+          {puzzleComponents()}
+        </StackRevealer>
         <S.Credits>
           {'Made with </> by '}
           <PrettyLink href='https://github.com/marcosnav/cuadro'>

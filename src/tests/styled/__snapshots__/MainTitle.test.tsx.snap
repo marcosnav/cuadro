@@ -4,40 +4,12 @@ exports[`<MainTitle /> renders properly 1`] = `
 .c0 {
   color: #FFF;
   font-size: 1.44em;
-  height: 0px;
   margin: 0;
-  margin-bottom: 0px;
-  opacity: 0;
+  margin-bottom: 26px;
   text-align: center;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
 }
 
 <MainTitle>
-  <h1
-    className="c0"
-  >
-    Cuadro Title
-  </h1>
-</MainTitle>
-`;
-
-exports[`<MainTitle /> show: true 1`] = `
-.c0 {
-  color: #FFF;
-  font-size: 1.44em;
-  height: 26px;
-  margin: 0;
-  margin-bottom: 26px;
-  opacity: 1;
-  text-align: center;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-}
-
-<MainTitle
-  show={true}
->
   <h1
     className="c0"
   >

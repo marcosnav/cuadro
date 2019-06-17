@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StackRevealer/> renders properly 1`] = `
+<div>
+  <Revealer
+    direction="UP"
+    show={false}
+  >
+    <div
+      className="sc-jzJRlG efxQqd"
+      direction="UP"
+    >
+      <div />
+    </div>
+  </Revealer>
+  <Revealer
+    direction="UP"
+    show={false}
+  >
+    <div
+      className="sc-jzJRlG efxQqd"
+      direction="UP"
+    >
+      <div />
+    </div>
+  </Revealer>
+</div>
+`;
