@@ -65,18 +65,22 @@ export class PuzzleStore {
   }
 
   private [SwipeDirection.LEFT](arr: number[], pos: number) {
-    arr[0] = arr.splice(pos + 1, 1, pos)[0];
+    const swapWith = arr.indexOf(pos + 1);
+    arr[0] = arr.splice(swapWith, 1, pos)[0];
   }
 
   private [SwipeDirection.RIGHT](arr: number[], pos: number) {
-    arr[0] = arr.splice(pos - 1, 1, pos)[0];
+    const swapWith = arr.indexOf(pos - 1);
+    arr[0] = arr.splice(swapWith, 1, pos)[0];
   }
 
   private [SwipeDirection.DOWN](arr: number[], pos: number) {
-    arr[0] = arr.splice(pos - this.sideSize, 1, pos)[0];
+    const swapWith = arr.indexOf(pos - this.sideSize);
+    arr[0] = arr.splice(swapWith, 1, pos)[0];
   }
 
   private [SwipeDirection.UP](arr: number[], pos: number) {
-    arr[0] = arr.splice(pos + this.sideSize, 1, pos)[0];
+    const swapWith = arr.indexOf(pos + this.sideSize);
+    arr[0] = arr.splice(swapWith, 1, pos)[0];
   }
 }

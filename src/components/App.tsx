@@ -23,7 +23,7 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove, status }) => {
   return (
     <ThemeProvider theme={theme}>
       <S.AppWrapper status={status} >
-        <Logo />
+        <Logo status={status} />
         <PuzzleControls />
         <PuzzleBoard
           image={image}

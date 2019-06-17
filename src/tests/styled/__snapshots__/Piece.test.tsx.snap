@@ -14,8 +14,8 @@ exports[`<Piece/> renders properly 1`] = `
   -webkit-transform: translate(201px,0px);
   -ms-transform: translate(201px,0px);
   transform: translate(201px,0px);
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
   width: 67px;
 }
 

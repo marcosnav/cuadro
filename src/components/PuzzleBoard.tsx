@@ -63,11 +63,11 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
   }, [handleSwipe]);
 
   const boardPieces = () => {
-    return puzzleState.map((pos: number, index) => {
-      if (!index) {
+    return puzzleState.map((at: number, piece) => {
+      if (!piece) {
         return null;
       }
-      return <PuzzlePiece key={index} image={image} num={index} position={pos} />;
+      return <PuzzlePiece key={piece} image={image} num={piece} position={at} />;
     });
   };
 

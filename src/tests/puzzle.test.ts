@@ -3,8 +3,12 @@ import { PuzzleStore } from './../store/puzzle';
 
 const solvedPuzzle = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-// 4 to right : 6 to left : 1 down : 9 up
-const mixedPuzzle = [5, 1, 2, 3, 4, 0, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const mixedPuzzle = [
+  10, 14,  5,  8,
+  15,  0,  3,  6,
+  1,  9, 13, 11,
+  4, 12,  7,  2,
+];
 
 describe('PuzzleStore', () => {
   const store = new PuzzleStore();
@@ -25,25 +29,45 @@ describe('PuzzleStore', () => {
       test('DOWN', () => {
         store.puzzle = mixedPuzzle;
         store.move(SwipeDirection.DOWN);
-        expect(store.puzzle).toEqual([1, 5, 2, 3, 4, 0, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+        expect(store.puzzle).toEqual([
+          6, 14,  5,  8,
+          15,  0,  3,  10,
+          1,  9, 13, 11,
+          4, 12,  7,  2,
+        ]);
       });
 
       test('RIGHT', () => {
         store.puzzle = mixedPuzzle;
         store.move(SwipeDirection.RIGHT);
-        expect(store.puzzle).toEqual([4, 1, 2, 3, 5, 0, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+        expect(store.puzzle).toEqual([
+          9, 14,  5,  8,
+          15,  0,  3,  6,
+          1,  10, 13, 11,
+          4, 12,  7,  2,
+        ]);
       });
 
       test('LEFT', () => {
         store.puzzle = mixedPuzzle;
         store.move(SwipeDirection.LEFT);
-        expect(store.puzzle).toEqual([6, 1, 2, 3, 4, 0, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+        expect(store.puzzle).toEqual([
+          11, 14,  5,  8,
+          15,  0,  3,  6,
+          1,  9, 13, 10,
+          4, 12,  7,  2,
+        ]);
       });
 
       test('UP', () => {
         store.puzzle = mixedPuzzle;
         store.move(SwipeDirection.UP);
-        expect(store.puzzle).toEqual([9, 1, 2, 3, 4, 0, 6, 7, 8, 5, 10, 11, 12, 13, 14, 15]);
+        expect(store.puzzle).toEqual([
+          14, 10,  5,  8,
+          15,  0,  3,  6,
+          1,  9, 13, 11,
+          4, 12,  7,  2,
+        ]);
       });
     });
 

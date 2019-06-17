@@ -14,7 +14,7 @@ const Piece = styled.div<IProps>`
   position: absolute;
   top: 16px;
   transform: ${({top, left}) => `translate(${left}px,${top}px);`}
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
   width: 67px;
 `;
 
