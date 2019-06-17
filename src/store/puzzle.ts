@@ -1,4 +1,4 @@
-import { action, observable, toJS } from 'mobx';
+import { action, intercept, observable, toJS } from 'mobx';
 import { SwipeDirection } from './../constants';
 
 /**
@@ -8,6 +8,7 @@ export class PuzzleStore {
   @observable
   public puzzle: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+  private originalState: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   private sideSize: number;
   private totalPieces: number;
 
@@ -29,6 +30,16 @@ export class PuzzleStore {
       newPuzzle[pos] = swap;
     });
     this.puzzle = newPuzzle;
+    this.originalState = newPuzzle;
+  }
+
+  /**
+   * Reload the puzzle to its original state (restart game)
+   */
+  @action.bound
+  public reload(): void {
+    const original = toJS(this.originalState);
+    this.puzzle = original;
   }
 
   /**

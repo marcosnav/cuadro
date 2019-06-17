@@ -11,13 +11,13 @@ const mixedPuzzle = [
 ];
 
 describe('PuzzleStore', () => {
-  const store = new PuzzleStore();
-
   test('new instances should have puzzle in order', () => {
+    const store = new PuzzleStore();
     expect(store.puzzle).toEqual(solvedPuzzle);
   });
 
   test('action: mix', () => {
+    const store = new PuzzleStore();
     store.mix();
     expect(store.puzzle).not.toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
     expect(store.puzzle.length).toBe(16);
@@ -25,6 +25,8 @@ describe('PuzzleStore', () => {
   });
 
   describe('.move()', () => {
+    const store = new PuzzleStore();
+
     describe('when move direction is possible to do', () => {
       test('DOWN', () => {
         store.puzzle = mixedPuzzle;
@@ -95,6 +97,22 @@ describe('PuzzleStore', () => {
         store.move(SwipeDirection.UP);
         expect(store.puzzle).toEqual([13, 5, 2, 14, 4, 1, 6, 7, 8, 9, 10, 11, 12, 3, 0, 15]);
       });
+    });
+  });
+
+  describe('.reload', () => {
+    test('it should return to its original state (restart game)', () => {
+      const store = new PuzzleStore();
+      store.mix();
+      const originalPuzzle = store.puzzle.toString();
+      if (store.puzzle[0] > 3) {
+        store.move(SwipeDirection.DOWN);
+      } else {
+        store.move(SwipeDirection.UP);
+      }
+      expect(store.puzzle.toString()).not.toBe(originalPuzzle);
+      store.reload();
+      expect(store.puzzle.toString()).toBe(originalPuzzle);
     });
   });
 });

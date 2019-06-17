@@ -16,15 +16,22 @@ interface IAppSetup {
   image: string;
   puzzle: number[];
   onMove: (d: SwipeDirection) => void;
+  onNewGame: () => void;
+  onRestart: () => void;
+  onSeeOriginal: () => void;
   status: Status;
 }
 
-const App: FC<IAppSetup> = ({ image, puzzle, onMove, status }) => {
+const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSeeOriginal, status }) => {
   return (
     <ThemeProvider theme={theme}>
       <S.AppWrapper status={status} >
         <Logo status={status} />
-        <PuzzleControls />
+        <PuzzleControls
+          onNewGame={onNewGame}
+          onRestart={onRestart}
+          onSeeOriginal={onSeeOriginal}
+        />
         <PuzzleBoard
           image={image}
           puzzleState={puzzle}

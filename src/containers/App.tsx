@@ -20,6 +20,9 @@ const AppContainer: FC = () => (
     image={'https://cdn.newsapi.com.au/image/v1/5fe400894288b7956ab8d7bf9daa9881?width=650'}
     puzzle={puzzleStore.puzzle}
     onMove={puzzleStore.move}
+    onNewGame={puzzleStore.mix}
+    onRestart={puzzleStore.reload}
+    onSeeOriginal={puzzleStore.mix}
     status={Status.PLAYING_GAME}
   />
 );

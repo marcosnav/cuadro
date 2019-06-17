@@ -5,6 +5,9 @@ import * as S from './styled';
 
 interface IProps {
   newOnly?: boolean;
+  onNewGame: () => void;
+  onRestart: () => void;
+  onSeeOriginal: () => void;
 }
 
 const secondaryControls = (onRestart: () => void, onSeeOriginal: () => void) => {
@@ -34,11 +37,7 @@ const secondaryControls = (onRestart: () => void, onSeeOriginal: () => void) => 
  * Controls Component
  * @param props { newOnly: boolean }
  */
-const PuzzleControls: FC<IProps> = ({ newOnly }) => {
-  const onNewGame = () => '';
-  const onRestart = () => '';
-  const onSeeOriginal = () => '';
-
+const PuzzleControls: FC<IProps> = ({ newOnly, onNewGame, onRestart, onSeeOriginal }) => {
   return (
     <S.Controls newOnly={newOnly}>
       <ControlButton
