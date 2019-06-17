@@ -1,5 +1,5 @@
 import { action, observable, toJS } from 'mobx';
-import { SwipeDirection } from './../constants';
+import { Status, SwipeDirection } from './../constants';
 
 /**
  * PuzzleStore that contains the actual puzzle state and acts according to moves.
@@ -7,6 +7,9 @@ import { SwipeDirection } from './../constants';
 export class PuzzleStore {
   @observable
   public puzzle: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+  @observable
+  public state: Status = Status.PLAYING_GAME;
 
   private originalState: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   private sideSize: number;
@@ -40,6 +43,18 @@ export class PuzzleStore {
   public reload(): void {
     const original = toJS(this.originalState);
     this.puzzle = original;
+  }
+
+  /**
+   * Set state to show original image
+   */
+  @action.bound
+  public toggleOriginalImage(): void {
+    if (this.state === Status.PLAYING_GAME) {
+      this.state = Status.DISPLAY_ORIGINAL;
+    } else {
+      this.state = Status.PLAYING_GAME;
+    }
   }
 
   /**

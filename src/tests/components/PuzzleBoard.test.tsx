@@ -13,13 +13,15 @@ const touchHandler = {
 describe('<PuzzleBoard/>', () => {
   test('renders properly', () => {
     const swipedEvMock = () => '';
-    const component = mount(<PuzzleBoard image={''} puzzleState={puzzleStateMock} onSwipe={swipedEvMock} />);
+    const component = mount(
+    <PuzzleBoard image={''} puzzleState={puzzleStateMock} onSwipe={swipedEvMock} showOriginal={false} />);
     expect(component).toMatchSnapshot();
   });
 
   describe('onSwipe', () => {
     const swipedSpy = jest.fn();
-    const component = mount(<PuzzleBoard image={''} puzzleState={puzzleStateMock} onSwipe={swipedSpy} />);
+    const component = mount(
+    <PuzzleBoard image={''} puzzleState={puzzleStateMock} onSwipe={swipedSpy} showOriginal={false} />);
 
     test('not enough swipe distance', () => {
       component.simulate('touchStart', touchHandler.start(150, 150));

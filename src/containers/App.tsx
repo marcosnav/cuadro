@@ -1,7 +1,6 @@
 import { observer } from 'mobx-react';
 import React, { FC } from 'react';
 import { App } from './../components';
-import { Status } from './../constants';
 import { KeyControls } from './../services';
 import { PuzzleStore } from './../store';
 
@@ -22,8 +21,8 @@ const AppContainer: FC = () => (
     onMove={puzzleStore.move}
     onNewGame={puzzleStore.mix}
     onRestart={puzzleStore.reload}
-    onSeeOriginal={puzzleStore.mix}
-    status={Status.LOADING_IMAGE}
+    onSeeOriginal={puzzleStore.toggleOriginalImage}
+    status={puzzleStore.state}
   />
 );
 

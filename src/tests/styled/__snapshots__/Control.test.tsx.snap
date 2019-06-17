@@ -23,6 +23,8 @@ exports[`<Control/> renders properly 1`] = `
   justify-content: space-between;
   opacity: 1;
   padding: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .c0:focus {

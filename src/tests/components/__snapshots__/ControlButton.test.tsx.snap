@@ -6,7 +6,7 @@ exports[`<ControlButton /> renders properly 1`] = `
   onClick={[Function]}
 >
   <button
-    className="sc-bxivhb hxHpjV"
+    className="sc-bxivhb kDSUIZ"
     disabled={false}
     onClick={[Function]}
   >

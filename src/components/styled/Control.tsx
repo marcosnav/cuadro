@@ -17,6 +17,7 @@ const Control = styled.button<IProps>`
   justify-content: space-between;
   opacity: ${(props) => props.disabled ? '0.3' : '1'};
   padding: 0;
+  transition: opacity 0.3s ease;
 
   &:focus {
     outline: none;

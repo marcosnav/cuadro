@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PuzzleControls/> renders properly 1`] = `
+<Controls
+  newOnly={false}
+>
+  <ControlButton
+    action={[Function]}
+    disabled={false}
+    type="NEW_GAME"
+  >
+    New Game
+  </ControlButton>
+  <ControlButton
+    action={[Function]}
+    disabled={false}
+    type="RESTART_GAME"
+  >
+    Restart
+  </ControlButton>
+  <ControlButton
+    action={[Function]}
+    disabled={false}
+    type="SEE_ORIGINAL"
+  >
+    See
+     Original
+  </ControlButton>
+</Controls>
+`;

@@ -15,3 +15,4 @@ export { default as Piece } from './Piece';
 export { default as PieceImage } from './PieceImage';
 export { default as Credits } from './Credits';
 export { default as Revealer } from './Revealer';
+export { default as OriginalImage } from './OriginalImage';

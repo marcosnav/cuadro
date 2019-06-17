@@ -1,4 +1,4 @@
-import { SwipeDirection } from './../constants';
+import { Status, SwipeDirection } from './../constants';
 import { PuzzleStore } from './../store/puzzle';
 
 const solvedPuzzle = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
@@ -113,6 +113,15 @@ describe('PuzzleStore', () => {
       expect(store.puzzle.toString()).not.toBe(originalPuzzle);
       store.reload();
       expect(store.puzzle.toString()).toBe(originalPuzzle);
+    });
+  });
+
+  describe('.displayOriginal', () => {
+    test('it should set state as DISPLAY_ORIGINAL', () => {
+      const store = new PuzzleStore();
+      expect(store.state).toBe(Status.PLAYING_GAME);
+      store.toggleOriginalImage();
+      expect(store.state).toBe(Status.DISPLAY_ORIGINAL);
     });
   });
 });

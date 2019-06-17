@@ -7,6 +7,7 @@ interface IProps {
   image: string;
   puzzleState: number[];
   onSwipe: (direction: SwipeDirection) => void;
+  showOriginal: boolean;
 }
 
 const swipeThreshold = 50;
@@ -17,7 +18,7 @@ const swipeThreshold = 50;
  * {onSwipe} Function Handler that recieves SwipeDirection as parameter
  * @param props {puzzleState: number[][], onSwipe: Function}
  */
-const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
+const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe, showOriginal }) => {
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
   const [endX, setEndX] = useState(0);
@@ -75,6 +76,7 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe }) => {
     <S.Board onTouchStart={startSwipe} onTouchEnd={endSwipe}>
       <S.PuzzleHolder>
         {boardPieces()}
+        <S.OriginalImage image={image} show={showOriginal} />
       </S.PuzzleHolder>
     </S.Board>
   );

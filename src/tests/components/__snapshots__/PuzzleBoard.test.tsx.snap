@@ -284,6 +284,14 @@ exports[`<PuzzleBoard/> renders properly 1`] = `
             </PieceImage>
           </div>
         </Piece>
+        <OriginalImage
+          image=""
+          show={false}
+        >
+          <div
+            className="sc-cSHVUG izqqba"
+          />
+        </OriginalImage>
       </div>
     </PuzzleHolder>
   </div>

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { ThemeProvider } from 'styled-components';
 import {
   Status,
@@ -24,14 +24,13 @@ interface IAppSetup {
 }
 
 const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSeeOriginal, status }) => {
-  const [ isLoading, setLoading ] = useState(true);
-
   const puzzleComponents = () => {
     return (
       [
         (
         <PuzzleControls
           key='puzzlecontrols'
+          status={status}
           onNewGame={onNewGame}
           onRestart={onRestart}
           onSeeOriginal={onSeeOriginal}
@@ -42,6 +41,7 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSee
           image={image}
           puzzleState={puzzle}
           onSwipe={onMove}
+          showOriginal={status === Status.DISPLAY_ORIGINAL}
         />
         ), (
           <ShareCenter
@@ -52,20 +52,16 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSee
     );
   };
 
-  setTimeout(() => {
-    setLoading(false);
-  }, 4000);
-
   return (
     <ThemeProvider theme={theme}>
-      <S.AppWrapper status={isLoading ? Status.LOADING_IMAGE : Status.PLAYING_GAME} >
-        <S.Revealer height={52} show={isLoading} direction={'DOWN'}>
+      <S.AppWrapper status={status} >
+        <S.Revealer height={52} show={status === Status.LOADING_IMAGE} direction={'DOWN'}>
           <S.MainTitle>
             Cuadro
           </S.MainTitle>
         </S.Revealer>
-        <Logo status={isLoading ? Status.LOADING_IMAGE : Status.PLAYING_GAME} />
-        <StackRevealer show={!isLoading}>
+        <Logo status={status} />
+        <StackRevealer show={status === Status.PLAYING_GAME || status === Status.DISPLAY_ORIGINAL}>
           {puzzleComponents()}
         </StackRevealer>
         <S.Credits>
