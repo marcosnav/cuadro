@@ -5,7 +5,7 @@ import { KeyControls } from './../services';
 import { PuzzleStore } from './../store';
 
 const puzzleStore = new PuzzleStore();
-puzzleStore.mix();
+// puzzleStore.mix();
 
 const keycontrols = new KeyControls({
   enter: () => null,

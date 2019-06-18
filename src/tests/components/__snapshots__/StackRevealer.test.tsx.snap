@@ -7,7 +7,7 @@ exports[`<StackRevealer/> renders properly 1`] = `
     show={false}
   >
     <div
-      className="sc-jzJRlG efxQqd"
+      className="sc-jzJRlG jGGLUq"
       direction="UP"
     >
       <div />
@@ -18,7 +18,7 @@ exports[`<StackRevealer/> renders properly 1`] = `
     show={false}
   >
     <div
-      className="sc-jzJRlG efxQqd"
+      className="sc-jzJRlG jGGLUq"
       direction="UP"
     >
       <div />

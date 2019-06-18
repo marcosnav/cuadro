@@ -30,8 +30,10 @@ const AppWrapper = styled.div<IProps>`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  left: 0;
   padding: 26px;
   position: fixed;
+  top: 0;
   transition: background 0.3s ease;
   width: 100%;
 `;

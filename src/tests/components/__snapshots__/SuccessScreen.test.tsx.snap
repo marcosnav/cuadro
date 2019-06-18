@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SuccessScreen /> renders properly 1`] = `
+<SolvedWallpaper
+  image="/cat-image.jpg"
+  show={false}
+>
+  <div
+    className="sc-bdVaJa sc-kAzzGY cPZpwQ"
+  >
+    <ButtonIcon
+      src="check.svg"
+    >
+      <img
+        className="sc-ifAKCX hRfgbl"
+        src="check.svg"
+      />
+    </ButtonIcon>
+    <MainTitle>
+      <h1
+        className="sc-gzVnrw hQfdgp"
+      >
+        Well Done!
+      </h1>
+    </MainTitle>
+    <Credits>
+      <p
+        className="sc-fjdhpX dasJpR"
+      >
+        Picture by 
+        <Link
+          href="https://john-doe.com"
+          onClick={[Function]}
+          target="_blank"
+        >
+          <a
+            className="sc-bZQynM fKVASX"
+            href="https://john-doe.com"
+            onClick={[Function]}
+            target="_blank"
+          >
+            John Doe
+          </a>
+        </Link>
+      </p>
+    </Credits>
+  </div>
+</SolvedWallpaper>
+`;

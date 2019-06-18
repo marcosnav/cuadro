@@ -10,7 +10,7 @@ const PieceImage = styled.div<IProps>`
   background: ${(props) => props.theme.DARK};
   background-image: url(${({ image }) => image});
   background-position: center center;
-  background-size: cover cover;
+  background-size: cover;
   height: 268px;
   position: relative;
   transform: ${({top, left}) => `translate(${left}px,${top}px);`}

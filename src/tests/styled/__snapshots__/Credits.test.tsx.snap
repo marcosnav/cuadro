@@ -11,7 +11,9 @@ exports[`<Credits/> renders properly 1`] = `
   width: 100%;
 }
 
-<Credits>
+<Credits
+  bottom={true}
+>
   <p
     className="c0"
   >

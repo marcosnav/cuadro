@@ -21,7 +21,9 @@ const getTransition = (easeTiming: string = '0.8') => {
 };
 
 const Revealer = styled.div<IProps>`
+  display: flex;
   height: ${({ height, show }) => show ? getHeight(height) : '0'};
+  justify-content: center;
   opacity: ${({ show }) => show ? '1' : '0'};
   transform: ${({ direction, show }) => show ? 'translateY(0)' : getTransform(direction)};
   transition: ${({ easeTiming }) => getTransition(easeTiming)};

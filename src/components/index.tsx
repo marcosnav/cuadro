@@ -5,3 +5,4 @@ export { default as PrettyLink } from './PrettyLink';
 export { default as PuzzleBoard } from './PuzzleBoard';
 export { default as ShareCenter } from './ShareCenter';
 export { default as StackRevealer } from './StackRevealer';
+export { default as SuccessScreen } from './SuccessScreen';

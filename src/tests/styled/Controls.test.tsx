@@ -22,7 +22,8 @@ describe('<Controls/>', () => {
     test('shows only the new game option', () => {
       const component = mount(<Controls newOnly={true} />);
       expect(component).toHaveStyleRule('padding', '0 10px');
-      expect(component).toHaveStyleRule('width', 'auto');
+      expect(component).toHaveStyleRule('width', '77px');
+      expect(component).toMatchSnapshot();
     });
   });
 });

@@ -2,7 +2,15 @@
 
 exports[`<Revealer /> direction DOWN 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   opacity: 0;
   -webkit-transform: translateY(-42px);
   -ms-transform: translateY(-42px);
@@ -28,7 +36,15 @@ exports[`<Revealer /> direction DOWN 1`] = `
 
 exports[`<Revealer /> easeTiming 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 100px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   opacity: 1;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -52,7 +68,15 @@ exports[`<Revealer /> easeTiming 1`] = `
 
 exports[`<Revealer /> renders properly 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   opacity: 0;
   -webkit-transform: translateY(42px);
   -ms-transform: translateY(42px);
@@ -74,7 +98,15 @@ exports[`<Revealer /> renders properly 1`] = `
 
 exports[`<Revealer /> show: true 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 100px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   opacity: 1;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);

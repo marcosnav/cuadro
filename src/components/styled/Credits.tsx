@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
-const Credits = styled.p`
-  bottom: 0;
+interface IProps {
+  bottom?: boolean;
+}
+
+const Credits = styled.p<IProps>`
+  bottom: ${({ bottom }) => bottom ? '0' : 'auto'};
   color: ${(props) => props.theme.TEXT};
   font-size: 0.7em;
-  left: 0;
+  left: ${({ bottom }) => bottom ? '0' : 'auto'};
   line-height: 1.44em;
-  position: fixed;
+  position: ${({ bottom }) => bottom ? 'fixed' : 'relative'};
   text-align: center;
   width: 100%;
 `;

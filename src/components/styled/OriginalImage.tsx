@@ -7,7 +7,7 @@ interface IProps {
 
 const OriginalImage = styled.div<IProps>`
   background-image: url("${({ image }) => image}");
-  background-size: cover cover;
+  background-size: cover;
   background-position: center center;
   height: 100%;
   opacity: ${({ show }) => show ? '1' : '0'};

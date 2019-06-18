@@ -12,6 +12,7 @@ import PuzzleControls from './PuzzleControls';
 import ShareCenter from './ShareCenter';
 import StackRevealer from './StackRevealer';
 import * as S from './styled';
+import SuccessScreen from './SuccessScreen';
 
 interface IAppSetup {
   image: string;
@@ -24,47 +25,54 @@ interface IAppSetup {
 }
 
 const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSeeOriginal, status }) => {
+  const loadingImage = status === Status.LOADING_IMAGE;
+  const displayOriginal = status === Status.DISPLAY_ORIGINAL;
+  const finishedGame = status === Status.FINISHED_GAME;
+  const playingGame = status === Status.PLAYING_GAME;
+
   const puzzleComponents = () => {
-    return (
-      [
-        (
-        <PuzzleControls
-          key='puzzlecontrols'
-          status={status}
-          onNewGame={onNewGame}
-          onRestart={onRestart}
-          onSeeOriginal={onSeeOriginal}
-        />
-        ), (
+    const componentsToDisplay = [
+      (
+      <PuzzleControls
+        key='puzzlecontrols'
+        status={status}
+        onNewGame={onNewGame}
+        onRestart={onRestart}
+        onSeeOriginal={onSeeOriginal}
+      />
+      ),
+    ];
+
+    if (!finishedGame) {
+      componentsToDisplay.push((
         <PuzzleBoard
           key='puzzleboard'
           image={image}
           puzzleState={puzzle}
           onSwipe={onMove}
-          showOriginal={status === Status.DISPLAY_ORIGINAL}
+          showOriginal={displayOriginal}
         />
-        ), (
-          <ShareCenter
-            key='sharecenter'
-          />
-        ),
-      ]
-    );
+      ));
+    }
+
+    componentsToDisplay.push(<ShareCenter key='sharecenter' />);
+    return componentsToDisplay;
   };
 
   return (
     <ThemeProvider theme={theme}>
       <S.AppWrapper status={status} >
-        <S.Revealer height={52} show={status === Status.LOADING_IMAGE} direction={'DOWN'}>
+        <SuccessScreen author={''} image={image} show={finishedGame} creditsUrl={''} />
+        <S.Revealer height={52} show={loadingImage} direction={'DOWN'}>
           <S.MainTitle>
             Cuadro
           </S.MainTitle>
         </S.Revealer>
-        <Logo status={status} />
-        <StackRevealer show={status === Status.PLAYING_GAME || status === Status.DISPLAY_ORIGINAL}>
+        {!finishedGame ? <Logo status={status} /> :  null}
+        <StackRevealer show={playingGame || displayOriginal}>
           {puzzleComponents()}
         </StackRevealer>
-        <S.Credits>
+        <S.Credits bottom={true}>
           {'Made with </> by '}
           <PrettyLink href='https://github.com/marcosnav/cuadro'>
             marcosnav.

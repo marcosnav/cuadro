@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Board = styled.div`
   background: ${(props) => props.theme.WHITE};
   background-position: center center;
-  background-size: cover cover;
+  background-size: cover;
   border-radius: 3px;
   box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
