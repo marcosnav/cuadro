@@ -98,6 +98,27 @@ describe('PuzzleStore', () => {
         expect(store.puzzle).toEqual([13, 5, 2, 14, 4, 1, 6, 7, 8, 9, 10, 11, 12, 3, 0, 15]);
       });
     });
+
+    describe('when the puzzle is solved', () => {
+      test('the state gets set as FINISHED_GAME and disables movements', () => {
+        store.puzzle = [
+          5, 1, 2, 3,
+          0, 4, 6, 7,
+          8, 9, 10, 11,
+          12, 13, 14, 15,
+        ];
+        expect(store.state).toBe(Status.PLAYING_GAME);
+        store.move(SwipeDirection.RIGHT);
+        expect(store.state).toBe(Status.PLAYING_GAME);
+        store.move(SwipeDirection.DOWN);
+        expect(store.state).toBe(Status.FINISHED_GAME);
+        expect(store.puzzle).toEqual(solvedPuzzle);
+        store.move(SwipeDirection.UP);
+        store.move(SwipeDirection.UP);
+        store.move(SwipeDirection.UP);
+        expect(store.puzzle).toEqual(solvedPuzzle);
+      });
+    });
   });
 
   describe('.reload', () => {

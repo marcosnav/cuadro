@@ -12,8 +12,9 @@ export class PuzzleStore {
   public state: Status = Status.PLAYING_GAME;
 
   private originalState: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-  private sideSize: number;
-  private totalPieces: number;
+  private readonly sideSize: number;
+  private readonly totalPieces: number;
+  private readonly fourSquaredSolution: string = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].toString();
 
   constructor(sideSize: number = 4) {
     this.sideSize = sideSize;
@@ -63,7 +64,10 @@ export class PuzzleStore {
    */
   @action.bound
   public move(direction: SwipeDirection): void {
-    const { puzzle } = this;
+    const { puzzle, state } = this;
+    if (state === Status.FINISHED_GAME) {
+      return;
+    }
     const updatedPuzzle = toJS(puzzle);
     const pos: number = puzzle[0];
     if (!this.canMoveTo(direction)) {
@@ -71,6 +75,9 @@ export class PuzzleStore {
     }
     this[direction](updatedPuzzle, pos);
     this.puzzle = updatedPuzzle;
+    if (this.puzzle.toString() === this.fourSquaredSolution) {
+      this.state = Status.FINISHED_GAME;
+    }
   }
 
   private canMoveTo(direction: SwipeDirection): boolean {
