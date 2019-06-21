@@ -17,7 +17,8 @@ const OriginalImage = styled.div<IProps>`
   width: 100%;
 
   &::before {
-    background: ${({ theme }) => theme.SOFT_GRAY};
+    background: ${({ theme }) => theme.GD_BLUE};
+    background: ${({ theme }) => `linear-gradient(30deg, ${theme.GD_BLUE} 0%, ${theme.GD_PURPLE} 100%)`};
     content: '';
     box-shadow: inset 0 1px 4px 2px rgba(0, 0, 0, 0.2);
     height: 67px;

@@ -12,6 +12,9 @@ junit.xml
 # production
 /build
 
+# config
+config.ts
+
 # misc
 .DS_Store
 .env.local

@@ -5,8 +5,8 @@ import SuccessScreen from './../../components/SuccessScreen';
 describe('<SuccessScreen />', () => {
   test('renders properly', () => {
     const component = mount(
-    <SuccessScreen author={'John Doe'} image={'/cat-image.jpg'} creditsUrl={'https://john-doe.com'} />);
-    expect(component.text()).toBe('Well Done!Picture by John Doe');
+    <SuccessScreen image={'/cat-image.jpg'} />);
+    expect(component.text()).toBe('Well Done!');
     expect(component).toMatchSnapshot();
   });
 });

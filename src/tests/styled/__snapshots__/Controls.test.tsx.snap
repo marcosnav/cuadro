@@ -52,7 +52,7 @@ exports[`<Controls/> with prop: new-only shows only the new game option 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: calc(100vh - 300px);
+  margin-top: calc(100vh - 360px);
   padding: 0 10px;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;

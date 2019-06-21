@@ -15,6 +15,7 @@ exports[`<OrignalImage /> renders properly 1`] = `
 }
 
 .c0::before {
+  background: linear-gradient(30deg,undefined 0%,undefined 100%);
   content: '';
   box-shadow: inset 0 1px 4px 2px rgba(0,0,0,0.2);
   height: 67px;
@@ -48,6 +49,7 @@ exports[`<OrignalImage /> show: true 1`] = `
 }
 
 .c0::before {
+  background: linear-gradient(30deg,undefined 0%,undefined 100%);
   content: '';
   box-shadow: inset 0 1px 4px 2px rgba(0,0,0,0.2);
   height: 67px;

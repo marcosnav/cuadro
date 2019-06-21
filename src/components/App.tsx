@@ -5,6 +5,8 @@ import {
   SwipeDirection,
   theme,
 } from './../constants';
+import Credits from './Credits';
+import ErrorMessage from './ErrorMessage';
 import Logo from './Logo';
 import PrettyLink from './PrettyLink';
 import PuzzleBoard from './PuzzleBoard';
@@ -15,6 +17,8 @@ import * as S from './styled';
 import SuccessScreen from './SuccessScreen';
 
 interface IAppSetup {
+  author: string;
+  creditsUrl: string;
   image: string;
   puzzle: number[];
   onMove: (d: SwipeDirection) => void;
@@ -24,13 +28,16 @@ interface IAppSetup {
   status: Status;
 }
 
-const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSeeOriginal, status }) => {
+const App: FC<IAppSetup> = (props) => {
+  const { author, creditsUrl, image, puzzle, onMove, onNewGame, onRestart, onSeeOriginal, status } = props;
+  const errored = status === Status.ERROR;
+  const startingGame = status === Status.STARTING_NEW_GAME;
   const loadingImage = status === Status.LOADING_IMAGE;
   const displayOriginal = status === Status.DISPLAY_ORIGINAL;
   const finishedGame = status === Status.FINISHED_GAME;
   const playingGame = status === Status.PLAYING_GAME;
 
-  const puzzleComponents = () => {
+  const puzzleParts = () => {
     const componentsToDisplay = [
       (
       <PuzzleControls
@@ -43,7 +50,7 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSee
       ),
     ];
 
-    if (!finishedGame) {
+    if (!startingGame && !finishedGame) {
       componentsToDisplay.push((
         <PuzzleBoard
           key='puzzleboard'
@@ -55,33 +62,43 @@ const App: FC<IAppSetup> = ({ image, puzzle, onMove, onNewGame, onRestart, onSee
       ));
     }
 
+    componentsToDisplay.push((
+      <S.Text
+        key='photocredits'
+      >
+        {'Picture by '}
+        <PrettyLink href={creditsUrl}>
+          {author}
+        </PrettyLink>
+      </S.Text>
+    ));
     componentsToDisplay.push(<ShareCenter key='sharecenter' />);
     return componentsToDisplay;
+  };
+
+  const gameContainer = () => {
+    return (
+      <S.Positioner top={52} >
+        <StackRevealer show={playingGame || displayOriginal}>
+          {puzzleParts()}
+        </StackRevealer>
+      </S.Positioner>
+    );
   };
 
   return (
     <ThemeProvider theme={theme}>
       <S.AppWrapper status={status} >
-        <SuccessScreen author={''} image={image} show={finishedGame} creditsUrl={''} />
-        <S.Revealer height={52} show={loadingImage} direction={'DOWN'}>
+        <SuccessScreen image={image} show={finishedGame} />
+        <S.Revealer height={52} show={startingGame || loadingImage} direction={'DOWN'}>
           <S.MainTitle>
             Cuadro
           </S.MainTitle>
         </S.Revealer>
         {!finishedGame ? <Logo status={status} /> :  null}
-        <StackRevealer show={playingGame || displayOriginal}>
-          {puzzleComponents()}
-        </StackRevealer>
-        <S.Credits bottom={true}>
-          {'Made with </> by '}
-          <PrettyLink href='https://github.com/marcosnav/cuadro'>
-            marcosnav.
-          </PrettyLink>
-          {' See project in '}
-          <PrettyLink href='https://github.com/marcosnav/cuadro'>
-            GitHub.
-          </PrettyLink>
-        </S.Credits>
+        {!startingGame ? gameContainer() : null}
+        {errored ? <ErrorMessage /> : null}
+        <Credits />
       </S.AppWrapper>
     </ThemeProvider>
   );

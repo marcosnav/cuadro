@@ -17,6 +17,8 @@ interface IProps {
  */
 const PuzzleControls: FC<IProps> = ({ status, onNewGame, onRestart, onSeeOriginal }) => {
   const displayOriginal = status === Status.DISPLAY_ORIGINAL;
+  const playingGame = status === Status.PLAYING_GAME;
+  const startingGame = status === Status.STARTING_NEW_GAME;
   const finishedGame = status === Status.FINISHED_GAME;
 
   const secondaryControls = () => {
@@ -44,7 +46,7 @@ const PuzzleControls: FC<IProps> = ({ status, onNewGame, onRestart, onSeeOrigina
   };
 
   return (
-    <S.Controls newOnly={finishedGame}>
+    <S.Controls newOnly={startingGame || finishedGame}>
       <ControlButton
         action={onNewGame}
         type={ControlType.NEW_GAME}
@@ -52,7 +54,7 @@ const PuzzleControls: FC<IProps> = ({ status, onNewGame, onRestart, onSeeOrigina
       >
         New Game
       </ControlButton>
-      {!finishedGame ? secondaryControls() : null}
+      {playingGame || displayOriginal ? secondaryControls() : null}
     </S.Controls>
   );
 };

@@ -1,5 +1,5 @@
-import { Status, SwipeDirection } from './../constants';
-import { PuzzleStore } from './../store/puzzle';
+import { Status, SwipeDirection } from './../../constants';
+import { PuzzleStore } from './../../store/puzzle';
 
 const solvedPuzzle = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
@@ -10,22 +10,73 @@ const mixedPuzzle = [
   4, 12,  7,  2,
 ];
 
+const ImageProviderMock = {
+  get: jest.fn(),
+};
+
+ImageProviderMock.get.mockImplementation(() => {
+  return new Promise((resolve) => resolve({
+    author: 'John',
+    authorUrl: 'http://john.doe',
+    id: 1,
+    url: 'http://image.credits',
+  }));
+});
+
 describe('PuzzleStore', () => {
   test('new instances should have puzzle in order', () => {
-    const store = new PuzzleStore();
+    const store = new PuzzleStore(ImageProviderMock);
     expect(store.puzzle).toEqual(solvedPuzzle);
   });
 
   test('action: mix', () => {
-    const store = new PuzzleStore();
+    const store = new PuzzleStore(ImageProviderMock);
     store.mix();
     expect(store.puzzle).not.toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
     expect(store.puzzle.length).toBe(16);
     expect(new Set(store.puzzle).size).toBe(16);
   });
 
+  describe('action: start', () => {
+    beforeEach(() => {
+      jest.useFakeTimers();
+    });
+
+    test('fetching image ok', async () => {
+      const store = new PuzzleStore(ImageProviderMock);
+      expect(store.state).toBe(Status.STARTING_NEW_GAME);
+
+      const startCall = store.start();
+      jest.advanceTimersByTime(1000);
+
+      await startCall;
+      expect(store.state).toBe(Status.LOADING_IMAGE);
+      expect(store.image).toBe('http://image.credits');
+      expect(store.imageAuthor.name).toBe('John');
+      expect(store.imageAuthor.url).toBe('http://john.doe');
+
+      jest.advanceTimersByTime(2000);
+      expect(store.state).toBe(Status.PLAYING_GAME);
+    });
+
+    test('fetching image exception', async () => {
+      ImageProviderMock.get.mockImplementationOnce(() => {
+        return new Promise((_, reject) => reject(new Error('image req error')));
+      });
+
+      const store = new PuzzleStore(ImageProviderMock);
+      expect(store.state).toBe(Status.STARTING_NEW_GAME);
+
+      const startCall = store.start();
+      jest.advanceTimersByTime(1000);
+
+      await startCall;
+      expect(store.state).toBe(Status.ERROR);
+    });
+  });
+
   describe('.move()', () => {
-    const store = new PuzzleStore();
+    const store = new PuzzleStore(ImageProviderMock);
 
     describe('when move direction is possible to do', () => {
       test('DOWN', () => {
@@ -100,7 +151,15 @@ describe('PuzzleStore', () => {
     });
 
     describe('when the puzzle is solved', () => {
-      test('the state gets set as FINISHED_GAME and disables movements', () => {
+      beforeEach(() => {
+        jest.useFakeTimers();
+      });
+
+      test('the state gets set as FINISHED_GAME and disables movements', async () => {
+        const startCall = store.start();
+        jest.runOnlyPendingTimers();
+        await startCall;
+        jest.runOnlyPendingTimers();
         store.puzzle = [
           5, 1, 2, 3,
           0, 4, 6, 7,
@@ -123,7 +182,7 @@ describe('PuzzleStore', () => {
 
   describe('.reload', () => {
     test('it should return to its original state (restart game)', () => {
-      const store = new PuzzleStore();
+      const store = new PuzzleStore(ImageProviderMock);
       store.mix();
       const originalPuzzle = store.puzzle.toString();
       if (store.puzzle[0] > 3) {
@@ -138,11 +197,21 @@ describe('PuzzleStore', () => {
   });
 
   describe('.displayOriginal', () => {
-    test('it should set state as DISPLAY_ORIGINAL', () => {
-      const store = new PuzzleStore();
+    beforeEach(() => {
+      jest.useFakeTimers();
+    });
+
+    test('it should toggle DISPLAY_ORIGINAL state', async () => {
+      const store = new PuzzleStore(ImageProviderMock);
+      const startCall = store.start();
+      jest.runOnlyPendingTimers();
+      await startCall;
+      jest.runOnlyPendingTimers();
       expect(store.state).toBe(Status.PLAYING_GAME);
       store.toggleOriginalImage();
       expect(store.state).toBe(Status.DISPLAY_ORIGINAL);
+      store.toggleOriginalImage();
+      expect(store.state).toBe(Status.PLAYING_GAME);
     });
   });
 });

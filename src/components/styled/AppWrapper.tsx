@@ -6,15 +6,19 @@ interface IProps {
 }
 
 const getGradient = (props: StyledProps<IProps>) => {
+  const startingGame = props.status === Status.STARTING_NEW_GAME;
+  const loadingImage = props.status === Status.LOADING_IMAGE;
+  const errored = props.status === Status.ERROR;
+
   let startG = props.theme.GD_PURPLE;
   let endG = props.theme.GD_BLUE;
 
-  if (props.status === Status.LOADING_IMAGE) {
+  if (startingGame || loadingImage) {
     startG = props.theme.GD_DARK_PURPLE;
     endG = props.theme.GD_PURPLE;
   }
 
-  if (props.status === Status.ERROR) {
+  if (errored) {
     startG = props.theme.GD_DARK_RED;
     endG = props.theme.RED;
   }

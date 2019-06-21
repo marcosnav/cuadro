@@ -13,7 +13,7 @@ const Controls = styled.section<IProps>`
   display: flex;
   height: 68px;
   justify-content: space-between;
-  margin-top: ${(props) => props.newOnly ? 'calc(100vh - 300px)' : '26px'};
+  margin-top: ${(props) => props.newOnly ? 'calc(100vh - 360px)' : '26px'};
   padding: ${(props) => props.newOnly ? '0 10px' : '0 16px'};
   transition: all 0.6s ease;
   width: ${(props) => props.newOnly ? '77px' : '300px'};

@@ -6,7 +6,7 @@ exports[`<SuccessScreen /> renders properly 1`] = `
   show={false}
 >
   <div
-    className="sc-bdVaJa sc-kAzzGY cPZpwQ"
+    className="sc-bdVaJa sc-chPdSV kgQEea"
   >
     <ButtonIcon
       src="check.svg"
@@ -23,27 +23,6 @@ exports[`<SuccessScreen /> renders properly 1`] = `
         Well Done!
       </h1>
     </MainTitle>
-    <Credits>
-      <p
-        className="sc-fjdhpX dasJpR"
-      >
-        Picture by 
-        <Link
-          href="https://john-doe.com"
-          onClick={[Function]}
-          target="_blank"
-        >
-          <a
-            className="sc-bZQynM fKVASX"
-            href="https://john-doe.com"
-            onClick={[Function]}
-            target="_blank"
-          >
-            John Doe
-          </a>
-        </Link>
-      </p>
-    </Credits>
   </div>
 </SolvedWallpaper>
 `;

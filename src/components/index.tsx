@@ -1,4 +1,5 @@
 export { default as App } from './App';
+export { default as Credits } from './Credits';
 export { default as Logo } from './Logo';
 export { default as PuzzleControls } from './PuzzleControls';
 export { default as PrettyLink } from './PrettyLink';

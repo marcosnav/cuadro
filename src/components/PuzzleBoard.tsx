@@ -7,7 +7,7 @@ interface IProps {
   image: string;
   puzzleState: number[];
   onSwipe: (direction: SwipeDirection) => void;
-  showOriginal: boolean;
+  showOriginal?: boolean;
 }
 
 const swipeThreshold = 50;
@@ -80,6 +80,10 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe, showOriginal }) 
       </S.PuzzleHolder>
     </S.Board>
   );
+};
+
+PuzzleBoard.defaultProps = {
+  showOriginal: false,
 };
 
 export default PuzzleBoard;

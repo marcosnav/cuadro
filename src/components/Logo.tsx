@@ -12,7 +12,7 @@ interface IProps {
  */
 const Logo: FC<IProps> = ({ status }) => {
   const fill = status === Status.ERROR ? theme.RED : theme.BLUE;
-  const animate = status === Status.LOADING_IMAGE;
+  const animate = status === Status.LOADING_IMAGE || status === Status.STARTING_NEW_GAME;
 
   return (
     <S.LogoAnimator animate={animate}>

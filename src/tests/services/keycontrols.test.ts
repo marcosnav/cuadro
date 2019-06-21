@@ -1,5 +1,5 @@
-import { SwipeDirection } from './../constants';
-import { KeyControls } from './../services/keycontrols';
+import { SwipeDirection } from './../../constants';
+import { KeyControls } from './../../services/keycontrols';
 
 describe('KeyControls', () => {
   test('using arrow keys', () => {
@@ -32,5 +32,18 @@ describe('KeyControls', () => {
     controls.register();
     document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13 }));
     expect(keySpy).toHaveBeenCalledTimes(1);
+  });
+
+  test('unregistered keys do nothing', () => {
+    const enterSpy = jest.fn();
+    const moveSpy = jest.fn();
+    const controls = new KeyControls({
+      enter: enterSpy,
+      move: moveSpy,
+    });
+    controls.register();
+    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 16 }));
+    expect(enterSpy).not.toHaveBeenCalled();
+    expect(moveSpy).not.toHaveBeenCalled();
   });
 });
