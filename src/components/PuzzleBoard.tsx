@@ -45,7 +45,7 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe, showOriginal }) 
     if (direction) {
       onSwipe(direction);
     }
-  }, [endX, endY, onSwipe]);
+  }, [startX, startY, endX, endY, onSwipe]);
 
   const startSwipe = (ev: React.TouchEvent) => {
     ev.stopPropagation();
@@ -59,9 +59,7 @@ const PuzzleBoard: FC<IProps> = ({ image, puzzleState, onSwipe, showOriginal }) 
     setEndY(ev.changedTouches[0].screenY);
   };
 
-  useEffect(() => {
-    handleSwipe();
-  }, [handleSwipe]);
+  useEffect(handleSwipe, [endX, endY]);
 
   const boardPieces = () => {
     return puzzleState.map((at: number, piece) => {
