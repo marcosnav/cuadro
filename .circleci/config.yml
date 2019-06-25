@@ -41,7 +41,8 @@ jobs:
               mkdir -p $BUNDLE_DIR
               tar -cvzf build.tar.gz build/*
               cp build.tar.gz $BUNDLE_DIR/
-              rsync -avzu -e ssh --progress build.tar.gz $CUADRO_USER@$CUADRO_HOST:/home/$CUADRO_USER/cuadro/
+              echo "$CUADRO_KNOWN_HOST" >> ~/.ssh/known_hosts
+              scp build.tar.gz $CUADRO_USER@$CUADRO_HOST:/home/$CUADRO_USER/cuadro/
             fi
       - store_artifacts:
           path: /tmp/test-results
@@ -71,4 +72,5 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only:
+                - master
