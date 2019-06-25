@@ -11,6 +11,9 @@ jobs:
     steps:
       - checkout
       - run: mkdir -p $TEST_RESULTS
+      - add_ssh_keys:
+          fingerprints:
+            - "14:0e:4b:7a:9d:71:76:f5:62:dd:9b:46:9d:19:e2:04"
       - restore_cache:
           key: deps-{{ checksum "yarn.lock" }}
           paths:
@@ -36,7 +39,9 @@ jobs:
             if [ "$CIRCLE_BRANCH" = "master" ]; then
               REACT_APP_UNSPLASH_ACCESS_KEY=$UNSPLASH_ACCESS_KEY yarn build
               mkdir -p $BUNDLE_DIR
-              cp -a build/ $BUNDLE_DIR
+              tar -cvzf build.tar.gz build/*
+              cp build.tar.gz $BUNDLE_DIR/
+              rsync -avzu -e ssh --progress build.tar.gz $CUADRO_USER@$CUADRO_HOST:/home/$CUADRO_USER/cuadro/
             fi
       - store_artifacts:
           path: /tmp/test-results
@@ -53,7 +58,8 @@ jobs:
       - run:
           name: Deploy via SCP/SSH
           command: |
-            rsync -avzu -e ssh --progress $BUNDLE_DIR/* $CUADRO_USER@$CUADRO_HOST:/home/$CUADRO_USER/cuadro
+            echo 'deploying'
+            ssh -v $CUADRO_USER@$CUADRO_HOST "cd ~/cuadro; ./cuadro_deploy.sh"
 
 workflows:
   version: 2
