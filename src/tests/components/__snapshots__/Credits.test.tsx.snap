@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Credits/> renders properly 1`] = `
+<Text
+  bottom={true}
+>
+  Made with &lt;/&gt; by 
+  <PrettyLink
+    href="https://github.com/marcosnav/cuadro"
+  >
+    marcosnav.
+  </PrettyLink>
+   See project in 
+  <PrettyLink
+    href="https://github.com/marcosnav/cuadro"
+  >
+    GitHub.
+  </PrettyLink>
+</Text>
+`;
