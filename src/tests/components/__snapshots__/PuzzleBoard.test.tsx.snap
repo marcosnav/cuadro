@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PuzzleBoard/> renders properly 1`] = `
+<Board
+  onTouchEnd={[Function]}
+  onTouchStart={[Function]}
+>
+  <div
+    className="sc-gZMcBi jwvAFn"
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+  >
+    <PuzzleHolder>
+      <div
+        className="sc-gqjmRU jBigTI"
+      >
+        <Piece
+          left={0}
+          top={0}
+        >
+          <div
+            className="sc-VigVT kwJVfx"
+          >
+            <PieceImage
+              image=""
+              left={-67}
+              top={-0}
+            >
+              <div
+                className="sc-jTzLTM ihqpbb"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={134}
+          top={0}
+        >
+          <div
+            className="sc-VigVT iTrJmf"
+          >
+            <PieceImage
+              image=""
+              left={-134}
+              top={-0}
+            >
+              <div
+                className="sc-jTzLTM ebEGuJ"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={201}
+          top={0}
+        >
+          <div
+            className="sc-VigVT fgdROd"
+          >
+            <PieceImage
+              image=""
+              left={-201}
+              top={-0}
+            >
+              <div
+                className="sc-jTzLTM iRzjik"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={0}
+          top={67}
+        >
+          <div
+            className="sc-VigVT POTZp"
+          >
+            <PieceImage
+              image=""
+              left={-0}
+              top={-67}
+            >
+              <div
+                className="sc-jTzLTM bflUXS"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={67}
+          top={67}
+        >
+          <div
+            className="sc-VigVT bYIDyA"
+          >
+            <PieceImage
+              image=""
+              left={-67}
+              top={-67}
+            >
+              <div
+                className="sc-jTzLTM igMrbK"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={134}
+          top={67}
+        >
+          <div
+            className="sc-VigVT clFHax"
+          >
+            <PieceImage
+              image=""
+              left={-134}
+              top={-67}
+            >
+              <div
+                className="sc-jTzLTM bHmcHo"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={201}
+          top={67}
+        >
+          <div
+            className="sc-VigVT dnYCTc"
+          >
+            <PieceImage
+              image=""
+              left={-201}
+              top={-67}
+            >
+              <div
+                className="sc-jTzLTM bJJZTr"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={0}
+          top={134}
+        >
+          <div
+            className="sc-VigVT goOfJv"
+          >
+            <PieceImage
+              image=""
+              left={-0}
+              top={-134}
+            >
+              <div
+                className="sc-jTzLTM ebzVXn"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={67}
+          top={134}
+        >
+          <div
+            className="sc-VigVT ifAhlG"
+          >
+            <PieceImage
+              image=""
+              left={-67}
+              top={-134}
+            >
+              <div
+                className="sc-jTzLTM jbbIvP"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={134}
+          top={134}
+        >
+          <div
+            className="sc-VigVT hdZHuS"
+          >
+            <PieceImage
+              image=""
+              left={-134}
+              top={-134}
+            >
+              <div
+                className="sc-jTzLTM jOVAyo"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={201}
+          top={134}
+        >
+          <div
+            className="sc-VigVT gxrtSc"
+          >
+            <PieceImage
+              image=""
+              left={-201}
+              top={-134}
+            >
+              <div
+                className="sc-jTzLTM gzjIsI"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={0}
+          top={201}
+        >
+          <div
+            className="sc-VigVT dHEDnc"
+          >
+            <PieceImage
+              image=""
+              left={-0}
+              top={-201}
+            >
+              <div
+                className="sc-jTzLTM hJgcxK"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={67}
+          top={201}
+        >
+          <div
+            className="sc-VigVT eYJEPc"
+          >
+            <PieceImage
+              image=""
+              left={-67}
+              top={-201}
+            >
+              <div
+                className="sc-jTzLTM ckSjKB"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={134}
+          top={201}
+        >
+          <div
+            className="sc-VigVT hwKgqy"
+          >
+            <PieceImage
+              image=""
+              left={-134}
+              top={-201}
+            >
+              <div
+                className="sc-jTzLTM gMxzbW"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <Piece
+          left={201}
+          top={201}
+        >
+          <div
+            className="sc-VigVT kRsllw"
+          >
+            <PieceImage
+              image=""
+              left={-201}
+              top={-201}
+            >
+              <div
+                className="sc-jTzLTM kpuxFy"
+              />
+            </PieceImage>
+          </div>
+        </Piece>
+        <OriginalImage
+          image=""
+          show={false}
+        >
+          <div
+            className="sc-kAzzGY bsaUJI"
+          />
+        </OriginalImage>
+      </div>
+    </PuzzleHolder>
+  </div>
+</Board>
+`;

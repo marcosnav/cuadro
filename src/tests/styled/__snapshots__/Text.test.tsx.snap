@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text/> renders properly 1`] = `
+.c0 {
+  bottom: 16px;
+  font-size: 0.7em;
+  left: 0;
+  line-height: 2.97em;
+  margin: auto;
+  max-width: 420px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  width: 100%;
+}
+
+<Text
+  bottom={true}
+>
+  <p
+    className="c0"
+  >
+    Made by john
+  </p>
+</Text>
+`;

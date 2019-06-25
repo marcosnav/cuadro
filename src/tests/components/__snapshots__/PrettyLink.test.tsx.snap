@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PrettyLink/> renders properly 1`] = `
+<Link
+  onClick={[Function]}
+  target="_blank"
+>
+  <a
+    className="sc-bZQynM fKVASX"
+    onClick={[Function]}
+    target="_blank"
+  >
+    link text
+  </a>
+</Link>
+`;

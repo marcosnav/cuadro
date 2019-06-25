@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShareCenter/> renders properly 1`] = `
+.c3 {
+  font-weight: bold;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.c3:hover {
+  opacity: 0.4;
+}
+
+.c1 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.c0 {
+  margin-top: 42px;
+  text-align: center;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.83em;
+  margin-top: 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 300px;
+}
+
+.c2 > * {
+  margin: 0 10px;
+}
+
+<Section>
+  <section
+    className="c0"
+  >
+    <CapsTitle>
+      <h4
+        className="c1"
+      >
+        Share The Joy
+      </h4>
+    </CapsTitle>
+    <ShareSection>
+      <div
+        className="c2"
+      >
+        <Link
+          onClick={[Function]}
+          target="_blank"
+        >
+          <a
+            className="c3"
+            onClick={[Function]}
+            target="_blank"
+          >
+            Facebook
+          </a>
+        </Link>
+        <Link
+          onClick={[Function]}
+          target="_blank"
+        >
+          <a
+            className="c3"
+            onClick={[Function]}
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </Link>
+      </div>
+    </ShareSection>
+  </section>
+</Section>
+`;

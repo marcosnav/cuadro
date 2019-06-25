@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CapsTitle/> renders properly 1`] = `
+.c0 {
+  color: #FFF;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+<CapsTitle>
+  <h4
+    className="c0"
+  >
+    link text
+  </h4>
+</CapsTitle>
+`;

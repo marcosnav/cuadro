@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainTitle /> renders properly 1`] = `
+.c0 {
+  color: #FFF;
+  font-size: 1.44em;
+  margin: 0;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+<MainTitle>
+  <h1
+    className="c0"
+  >
+    Cuadro Title
+  </h1>
+</MainTitle>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ControlButton /> renders properly 1`] = `
+<Control
+  disabled={false}
+  onClick={[Function]}
+>
+  <button
+    className="sc-bxivhb kDSUIZ"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <ButtonIcon
+      src=""
+    >
+      <img
+        className="sc-ifAKCX hRfgbl"
+        src=""
+      />
+    </ButtonIcon>
+    My Control Button
+  </button>
+</Control>
+`;

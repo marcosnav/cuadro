@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Piece/> renders properly 1`] = `
+.c0 {
+  background: #303030;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 67px;
+  left: 16px;
+  overflow: hidden;
+  position: absolute;
+  top: 16px;
+  -webkit-transform: translate(201px,0px);
+  -ms-transform: translate(201px,0px);
+  transform: translate(201px,0px);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  width: 67px;
+}
+
+<Piece
+  left={201}
+  top={0}
+>
+  <div
+    className="c0"
+  />
+</Piece>
+`;

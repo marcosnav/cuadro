@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SuccessScreen /> renders properly 1`] = `
+<SolvedWallpaper
+  image="/cat-image.jpg"
+  show={false}
+>
+  <div
+    className="sc-bdVaJa sc-chPdSV kgQEea"
+  >
+    <ButtonIcon
+      src="check.svg"
+    >
+      <img
+        className="sc-ifAKCX hRfgbl"
+        src="check.svg"
+      />
+    </ButtonIcon>
+    <MainTitle>
+      <h1
+        className="sc-gzVnrw hQfdgp"
+      >
+        Well Done!
+      </h1>
+    </MainTitle>
+  </div>
+</SolvedWallpaper>
+`;

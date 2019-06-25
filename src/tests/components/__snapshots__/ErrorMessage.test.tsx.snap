@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorMessage/> renders properly 1`] = `
+<Positioner
+  left={26}
+  right={26}
+  top={78}
+>
+  <MainTitle>
+    Oops!
+  </MainTitle>
+  <Text>
+    Something went wrong. Be sure that you are connected to the internet to be able to load the images used in the puzzles.
+  </Text>
+</Positioner>
+`;

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TriangleAnimator /> animate: true && reversed: true 1`] = `
+.c0 {
+  -webkit-animation: hRfQHy 2s ease infinite forwards;
+  animation: hRfQHy 2s ease infinite forwards;
+  left: 0;
+  height: 16px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 20px;
+}
+
+<TriangleAnimator
+  animate={true}
+  reversed={true}
+>
+  <div
+    className="c0"
+    reversed={true}
+  />
+</TriangleAnimator>
+`;
+
+exports[`<TriangleAnimator /> animate: true 1`] = `
+.c0 {
+  -webkit-animation: ouCfz 2s ease infinite forwards;
+  animation: ouCfz 2s ease infinite forwards;
+  left: 0;
+  height: 16px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 20px;
+}
+
+<TriangleAnimator
+  animate={true}
+>
+  <div
+    className="c0"
+  />
+</TriangleAnimator>
+`;
+
+exports[`<TriangleAnimator /> renders properly 1`] = `
+.c0 {
+  -webkit-animation: none;
+  animation: none;
+  left: 0;
+  height: 16px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 20px;
+}
+
+<TriangleAnimator>
+  <div
+    className="c0"
+  />
+</TriangleAnimator>
+`;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PieceImage/> renders properly 1`] = `
+.c0 {
+  background: #303030;
+  background-image: url(cat-picture.jpg);
+  background-position: center center;
+  background-size: cover;
+  height: 268px;
+  position: relative;
+  -webkit-transform: translate(201px,0px);
+  -ms-transform: translate(201px,0px);
+  transform: translate(201px,0px);
+  width: 268px;
+}
+
+<PieceImage
+  image="cat-picture.jpg"
+  left={201}
+  top={0}
+>
+  <div
+    className="c0"
+  />
+</PieceImage>
+`;
