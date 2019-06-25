@@ -7,9 +7,11 @@ jobs:
     working_directory: ~/cuadro
     environment:
       - TEST_RESULTS: /tmp/test-results/jest
+      - BUNDLE_DIR: /tmp/test-results/build
     steps:
       - checkout
       - run: mkdir -p $TEST_RESULTS
+      - run: mkdir -p $BUNDLE_DIR
       - restore_cache:
           key: deps-{{ checksum "yarn.lock" }}
           paths:
@@ -29,7 +31,38 @@ jobs:
           command: |
             CI=true yarn test --coverage --reporters=jest-junit
             mv junit.xml $TEST_RESULTS/results.xml
+      - run:
+          name: build-bundle
+          command: |
+            if [ "$CIRCLE_BRANCH" = "master" ]; then
+              REACT_APP_UNSPLASH_ACCESS_KEY=$UNSPLASH_ACCESS_KEY yarn build
+              cp -a build/ $BUNDLE_DIR
+            fi
       - store_artifacts:
           path: /tmp/test-results
       - store_test_results:
           path: /tmp/test-results/jest
+
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "14:0e:4b:7a:9d:71:76:f5:62:dd:9b:46:9d:19:e2:04"
+      - run:
+          name: Deploy via SCP/SSH
+          command: |
+            rsync -avzu -e ssh --progress $BUNDLE_DIR/* $SSH_USER@$SSH_HOST:/home/$SSH_USER/cuadro
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
