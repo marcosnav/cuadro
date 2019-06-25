@@ -13,7 +13,9 @@ junit.xml
 /build
 
 # config
-config.ts
+config.json
+config.development.ts
+development.config.ts
 
 # misc
 .DS_Store

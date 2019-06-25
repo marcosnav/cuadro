@@ -1,11 +1,12 @@
 import { observer } from 'mobx-react';
 import React, { FC } from 'react';
 import { App } from './../components';
-import { CONFIG } from './../config/config';
+import { Config } from './../config';
 import { ImageFetcher, KeyControls } from './../services';
 import { PuzzleStore } from './../store';
 
-const imageProvider = new ImageFetcher({ unsplashAccessKey: CONFIG.UNSPLASH_ACCESS_KEY });
+const config = new Config();
+const imageProvider = new ImageFetcher({ unsplashAccessKey: config.get('UNSPLASH_ACCESS_KEY') });
 const puzzleStore = new PuzzleStore(imageProvider);
 puzzleStore.start();
 
