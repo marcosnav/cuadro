@@ -53,7 +53,7 @@ jobs:
       - run:
           name: Deploy via SCP/SSH
           command: |
-            rsync -avzu -e ssh --progress $BUNDLE_DIR/* $SSH_USER@$SSH_HOST:/home/$SSH_USER/cuadro
+            rsync -avzu -e ssh --progress $BUNDLE_DIR/* $CUADRO_USER@$CUADRO_HOST:/home/$CUADRO_USER/cuadro
 
 workflows:
   version: 2
