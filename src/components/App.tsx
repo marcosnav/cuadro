@@ -70,6 +70,10 @@ const App: FC<IAppSetup> = (props) => {
         <PrettyLink href={creditsUrl}>
           {author}
         </PrettyLink>
+        {' on '}
+        <PrettyLink href='https://unsplash.com'>
+          Unsplash
+        </PrettyLink>
       </S.Text>
     ));
     componentsToDisplay.push(<ShareCenter key='sharecenter' />);
