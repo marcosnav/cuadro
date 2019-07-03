@@ -67,11 +67,11 @@ const App: FC<IAppSetup> = (props) => {
         key='photocredits'
       >
         {'Picture by '}
-        <PrettyLink href={creditsUrl}>
+        <PrettyLink href={creditsUrl + '?utm_source=cuadro&utm_medium=referral'}>
           {author}
         </PrettyLink>
         {' on '}
-        <PrettyLink href='https://unsplash.com'>
+        <PrettyLink href={'https://unsplash.com?utm_source=cuadro&utm_medium=referral'}>
           Unsplash
         </PrettyLink>
       </S.Text>
